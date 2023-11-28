@@ -1,2 +1,13 @@
-<!DOCTYPE html>
-... 
+  <head>
+    <title>Sonomorphia | FAQ et Questions Récurrentes       
+    </title>
+  </head>
+  <body>
+    <h1> Sonomorphia </h1>
+    <h2> F.A.Q </h2>
+    <p> Vous vous posez des questions ? Voici quelques exemples de questions récurrentes qui pourraient vous aider tout de suite !
+    </p>
+    <input type = "button" value "Quelle est l'autonomie du produit OutSound ?"/>
+    <input type = "button" value "Pendant combien de temps est-il possible de renvoyer le produit ?"/>
+    <input type = "button" value "Sur quelles lignes des transports publics fonctionne OutSound ?"
+  </body>

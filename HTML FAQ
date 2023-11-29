@@ -4,12 +4,45 @@
     <link href="style.css.css" rel="stylesheet">
   </head>
   <body>
-    <h1> Sonomorphia </h1>
-    <h2> F.A.Q </h2>
-    <p> Vous vous posez des questions ? Voici quelques exemples de questions récurrentes qui pourraient vous aider tout de suite !
+    <h1> <FONT size = 30>Sonomorphia </h1></FONT>
+    <h2><FONT size = 24>F.A.Q </h2></FONT> 
+    <p> Vous vous posez des questions ?<br />
+    Voici quelques exemples de questions récurrentes qui pourraient vous aider tout de suite !
     </p>
 
-    <button><span class="bouton">Quelle est l'autonomie du produit OutSound ?</span></button>
-    <button><span class="bouton">Pendant combien de temps est-il possible de renvoyer le produit ?"</span></button>
-    <button><span class="bouton">Sur quelles lignes des transports publics fonctionne OutSound ?"</span></button>
+    <button><span class="bouton" onclick="toggleTexte()">Quelle est l'autonomie du produit OutSound ?</span></button>
+    <button><span class="bouton" onclick="toggleTexte()">Pendant combien de temps est-il possible de renvoyer le produit ?"</span></button>
+    <button><span class="bouton" onclick="toggleTexte()">Sur quelles lignes des transports publics fonctionne OutSound ?"</span></button>
+    <div id = "texteDeroulantQ1">
+      <p>L'autonomie prévue avec une utilisation normale du produit est de 4 à 5 heures
+      </p>
+    </div>
+    <div id = "texte DeroulantQ2">
+    <p>La période de retour du produit s'élève à 2 semaines après réception du colis.</p>
+    </div>
+    <div id = "texteDeroulantQ3">
+      <p>Nous avons conçu OutSound pour qu'il fonctionne sur l'ensemble des lignes de métros du territoire, les personnalisations permettent néanmoins d'adapter très précisément l'atténuation à la ligne en question.</p>
+    </div>
+    <script>
+      function toggleTexte(){
+        var texte Deroulant = document.getElementById(texteDeroulantQ1)
+      }
+    </script>
+
+    <fieldset>
+      <legend>Vous ne trouvez pas ? Posez-nous votre question ici :</legend>
+      <form action="YOUR_FORM_ACTION_URL" method="POST" >
+        <input type="textarea" id="monTxt" placeholder="Saisissez votre question">
+        <script>
+          document.getElementById('monTxt').addEventListener('focus',function(){this.placeholder = '';})
+          document.getElementById('monTxt').addEventListener('blur',function(){
+            if(this.value ===''){
+              this.placeholder = 'Saisissez votre question';
+            }
+          });
+        </script>
+        <input type="submit" value="Envoyer">
+      </form>
+    </fieldset>
+    
   </body>

@@ -8,7 +8,7 @@ body {
   height: 100vh;
   margin: 0;
   display: grid;
-  background-image: url("C:/Users/rbagh/OneDrive/Documents/Fond Site.JFIF");
+  background-image: url('background.jpg');
   background-size : cover;
   }
   h2 {

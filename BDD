@@ -1,1 +1,69 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `mydb` ;
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+USE `mydb` ;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Site Web`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Site Web` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Site Web` (
+  `idSite Web` INT NOT NULL,
+  `Client_idClient` INT NOT NULL,
+  `Client_Profil_idProfil` INT NOT NULL,
+  `S'inscrire` VARCHAR(45) NULL,
+  PRIMARY KEY (`idSite Web`, `Client_idClient`, `Client_Profil_idProfil`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Client`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Client` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Client` (
+  `idClient` INT NOT NULL,
+  `Nom` VARCHAR(45) NULL,
+  `Prénom` VARCHAR(45) NULL,
+  `Adresse email` VARCHAR(45) NULL,
+  `Profil_idProfil` INT NOT NULL,
+  `Site Web_idSite Web` INT NOT NULL,
+  `Site Web_Client_idClient` INT NOT NULL,
+  `Site Web_Client_Profil_idProfil` INT NOT NULL,
+  PRIMARY KEY (`idClient`, `Profil_idProfil`, `Site Web_idSite Web`, `Site Web_Client_idClient`, `Site Web_Client_Profil_idProfil`),
+  INDEX `fk_Client_Site Web1_idx` (`Site Web_idSite Web` ASC, `Site Web_Client_idClient` ASC, `Site Web_Client_Profil_idProfil` ASC) VISIBLE,
+  CONSTRAINT `fk_Client_Site Web1`
+    FOREIGN KEY (`Site Web_idSite Web` , `Site Web_Client_idClient` , `Site Web_Client_Profil_idProfil`)
+    REFERENCES `mydb`.`Site Web` (`idSite Web` , `Client_idClient` , `Client_Profil_idProfil`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`OutSound`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`OutSound` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`OutSound` (
+  `Reference Produit` INT NOT NULL,
+  `Client_idClient` INT NOT NULL,
+  PRIMARY KEY (`Reference Produit`, `Client_idClient`),
+  INDEX `fk_OutSound_Client1_idx` (`Client_idClient` ASC) VISIBLE,
+  CONSTRAINT `fk_OutSound_Client1`
+    FOREIGN KEY (`Client_idClient`)
+    REFERENCES `mydb`.`Client` (`idClient`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;

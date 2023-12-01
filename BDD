@@ -15,6 +15,19 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
+-- Table `mydb`.`Profil`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Profil` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Profil` (
+  `idProfil` INT NOT NULL,
+  `Modification du produit` VARCHAR(45) NULL,
+  `Profilcol` VARCHAR(45) NULL,
+  PRIMARY KEY (`idProfil`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `mydb`.`Client`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `mydb`.`Client` ;
@@ -25,8 +38,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Client` (
   `Prénom` VARCHAR(45) NULL,
   `Adresse email` VARCHAR(45) NULL,
   `Profil_idProfil` INT NOT NULL,
-  PRIMARY KEY (`idClient`, `Profil_idProfil`),
-    REFERENCES `mydb`
+  `Profil_idProfil1` INT NOT NULL,
+  PRIMARY KEY (`idClient`, `Profil_idProfil`, `Profil_idProfil1`),
+  INDEX `fk_Client_Profil1_idx` (`Profil_idProfil1` ASC) VISIBLE,
+  CONSTRAINT `fk_Client_Profil1`
+    FOREIGN KEY (`Profil_idProfil1`)
+    REFERENCES `mydb`.`Profil` (`idProfil`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -48,3 +65,73 @@ CREATE TABLE IF NOT EXISTS `mydb`.`OutSound` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Capteur`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Capteur` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Capteur` (
+  `idCapteur` INT NOT NULL,
+  `Puissance Sonore` DECIMAL NULL,
+  `Consommation Energie` DECIMAL NULL,
+  `OutSound_Reference Produit` INT NOT NULL,
+  PRIMARY KEY (`idCapteur`, `OutSound_Reference Produit`),
+  INDEX `fk_Capteur_OutSound_idx` (`OutSound_Reference Produit` ASC) VISIBLE,
+  CONSTRAINT `fk_Capteur_OutSound`
+    FOREIGN KEY (`OutSound_Reference Produit`)
+    REFERENCES `mydb`.`OutSound` (`Reference Produit`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Lieu`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Lieu` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Lieu` (
+  `Ligne de métro` INT NOT NULL,
+  `Client_idClient` INT NOT NULL,
+  `OutSound_Reference Produit` INT NOT NULL,
+  `OutSound_Client_idClient` INT NOT NULL,
+  PRIMARY KEY (`Ligne de métro`),
+  INDEX `fk_Lieu_Client1_idx` (`Client_idClient` ASC) VISIBLE,
+  INDEX `fk_Lieu_OutSound1_idx` (`OutSound_Reference Produit` ASC, `OutSound_Client_idClient` ASC) VISIBLE,
+  CONSTRAINT `fk_Lieu_Client1`
+    FOREIGN KEY (`Client_idClient`)
+    REFERENCES `mydb`.`Client` (`idClient`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Lieu_OutSound1`
+    FOREIGN KEY (`OutSound_Reference Produit` , `OutSound_Client_idClient`)
+    REFERENCES `mydb`.`OutSound` (`Reference Produit` , `Client_idClient`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Entreprise`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`Entreprise` ;
+
+CREATE TABLE IF NOT EXISTS `mydb`.`Entreprise` (
+  `ID_Entreprise` INT NOT NULL,
+  `Client_idClient` INT NOT NULL,
+  `Client_Profil_idProfil` INT NOT NULL,
+  PRIMARY KEY (`ID_Entreprise`, `Client_idClient`, `Client_Profil_idProfil`),
+  INDEX `fk_Entreprise_Client1_idx` (`Client_idClient` ASC, `Client_Profil_idProfil` ASC) VISIBLE,
+  CONSTRAINT `fk_Entreprise_Client1`
+    FOREIGN KEY (`Client_idClient` , `Client_Profil_idProfil`)
+    REFERENCES `mydb`.`Client` (`idClient` , `Profil_idProfil`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

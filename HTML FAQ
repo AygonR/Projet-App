@@ -10,23 +10,28 @@
     Voici quelques exemples de questions récurrentes qui pourraient vous aider tout de suite !
     </p>
 
-    <button><span class="bouton" onclick="toggleTexte()">Quelle est l'autonomie du produit OutSound ?</span></button>
-    <button><span class="bouton" onclick="toggleTexte()">Pendant combien de temps est-il possible de renvoyer le produit ?"</span></button>
-    <button><span class="bouton" onclick="toggleTexte()">Sur quelles lignes des transports publics fonctionne OutSound ?"</span></button>
-    <div id = "texteDeroulantQ1">
+    <button class="question" onclick="toggleAnswer(1)">Quelle est l'autonomie du produit OutSound ?<br /></button>
+    <div class = "Answer" id = "Answer1" style="display:none;">
       <p>L'autonomie prévue avec une utilisation normale du produit est de 4 à 5 heures
       </p>
     </div>
-    <div id = "texte DeroulantQ2">
-    <p>La période de retour du produit s'élève à 2 semaines après réception du colis.</p>
-    </div>
-    <div id = "texteDeroulantQ3">
+    <button class="question" onclick="toggleAnswer(2)">Pendant combien de temps est-il possible de renvoyer le produit ?"<br /></button>
+    <div class = "Answer" id = "Answer2" style="display:none;">
+      <p>La période de retour du produit s'élève à 2 semaines après réception du colis.</p>
+      </div>
+    <button class="question" onclick="toggleAnswer(3)">Sur quelles lignes des transports publics fonctionne OutSound ?"<br /></button>
+    <div class = "Answer" id = "Answer3" style="display:none;">
       <p>Nous avons conçu OutSound pour qu'il fonctionne sur l'ensemble des lignes de métros du territoire, les personnalisations permettent néanmoins d'adapter très précisément l'atténuation à la ligne en question.</p>
     </div>
     <script>
-      function toggleTexte(){
-        var texte Deroulant = document.getElementById(texteDeroulantQ1)
-      }
+      function toggleAnswer(id){
+        var Answer = document.getElementById("Answer"+id);
+        if (Answer.style.display === 'none' || Answer.style.display === '') {
+                Answer.style.display = 'block';
+            } else {
+                Answer.style.display = 'none';
+            }
+        }
     </script>
 
     <fieldset>

@@ -25,14 +25,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Client` (
   `Prénom` VARCHAR(45) NULL,
   `Adresse email` VARCHAR(45) NULL,
   `Profil_idProfil` INT NOT NULL,
-  `Site Web_idSite Web` INT NOT NULL,
-  `Site Web_Client_idClient` INT NOT NULL,
-  `Site Web_Client_Profil_idProfil` INT NOT NULL,
-  PRIMARY KEY (`idClient`, `Profil_idProfil`, `Site Web_idSite Web`, `Site Web_Client_idClient`, `Site Web_Client_Profil_idProfil`),
-  INDEX `fk_Client_Site Web1_idx` (`Site Web_idSite Web` ASC, `Site Web_Client_idClient` ASC, `Site Web_Client_Profil_idProfil` ASC) VISIBLE,
-  CONSTRAINT `fk_Client_Site Web1`
-    FOREIGN KEY (`Site Web_idSite Web` , `Site Web_Client_idClient` , `Site Web_Client_Profil_idProfil`)
-    REFERENCES `mydb`.`Site Web` (`idSite Web` , `Client_idClient` , `Client_Profil_idProfil`)
+  PRIMARY KEY (`idClient`, `Profil_idProfil`),
+    REFERENCES `mydb`
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

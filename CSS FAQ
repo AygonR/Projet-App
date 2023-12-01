@@ -8,21 +8,12 @@ body {
   height: 100vh;
   margin: 0;
   display: grid;
-  background-image: url('background.jpg');
+  background-image: url("C:/Users/rbagh/OneDrive/Documents/Fond Site.JFIF");
   background-size : cover;
   }
   h2 {
     text-align: center;
     color : SkyBlue; 
-  }
-  .bouton{
-    display: grid;
-    grid-area:left;
-    text-align: left;
-    width:400px;
-    height : 10px;
-    padding : 5px;
-    cursor : pointer;
   }
 
   input[type="textarea"] {
@@ -32,11 +23,17 @@ body {
     text-wrap: "hard";
     word-wrap : "hard";
   }
-  .texteDeroulant{
-    display: none;
-    padding: 10px;
+
+
+  .Answer{
     font-size: 16px;
-    margin-top: 10px;
     border: 1px solid #000000;
     border-radius: 4px;
+    background-color: azure;
+  }
+  .question{
+    text-align: left;
+    width:400px;
+    height : 30px;;
+    cursor : pointer;
   }

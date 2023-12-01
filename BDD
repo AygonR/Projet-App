@@ -15,20 +15,6 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Site Web`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`Site Web` ;
-
-CREATE TABLE IF NOT EXISTS `mydb`.`Site Web` (
-  `idSite Web` INT NOT NULL,
-  `Client_idClient` INT NOT NULL,
-  `Client_Profil_idProfil` INT NOT NULL,
-  `S'inscrire` VARCHAR(45) NULL,
-  PRIMARY KEY (`idSite Web`, `Client_idClient`, `Client_Profil_idProfil`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `mydb`.`Client`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `mydb`.`Client` ;

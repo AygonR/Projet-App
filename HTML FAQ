@@ -1,53 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-    <title>Sonomorphia | FAQ et Questions Récurrentes       
-    </title>
-    <link href="style.css.css" rel="stylesheet">
-  </head>
-  <body>
-    <h1> <FONT size = 30>Sonomorphia </h1></FONT>
-    <h2><FONT size = 24>F.A.Q </h2></FONT> 
-    <p> Vous vous posez des questions ?<br />
-    Voici quelques exemples de questions récurrentes qui pourraient vous aider tout de suite !
-    </p>
-
-    <button class="question" onclick="toggleAnswer(1)">Quelle est l'autonomie du produit OutSound ?<br /></button>
-    <div class = "Answer" id = "Answer1" style="display:none;">
-      <p>L'autonomie prévue avec une utilisation normale du produit est de 4 à 5 heures
-      </p>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="testbouton.css" rel="stylesheet">
+    <title>Sonomorphia | FAQ et Questions Récurrentes</title>
+</head>
+<body>
+    <h1>Vous avez des questions ? Regardez tout d'abord quelques exemples récurrents :</h1>
+    <div class="container-faq">
+        <div class="questions">
+            <div class="visible-pannel">
+                <h2>Texte question</h2>
+                <img src="C:/Users/rbagh/OneDrive/Documents/Site App/croix.png" alt="croix animation">
+            </div>
+            <div class="toggle-pannel">
+                <h4>Titre de la réponse</h4>
+                <p>Réponse : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse temporibus explicabo ipsa officia, error blanditiis odit nostrum minima quas sit aperiam repellat ratione voluptate, iure quod fuga eaque nobis quo.</p>
+            </div>
+        </div>
+        <div class="questions">
+            <div class="visible-pannel">
+                <h2>Texte question</h2>
+                <img src="C:/Users/rbagh/OneDrive/Documents/Site App/croix.png" alt="croix animation">
+            </div>
+            <div class="toggle-pannel">
+                <h4>Titre de la réponse</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt perferendis repudiandae voluptas officiis voluptatibus molestias dolores, nesciunt non minus temporibus hic possimus quis dolorum vitae, soluta nobis est ullam sit?</p>
+            </div>
+        </div>
+        <div class="questions">
+            <div class="visible-pannel">
+                <h2>Texte question</h2>
+                <img src="C:/Users/rbagh/OneDrive/Documents/Site App/croix.png" alt="croix animation">
+            </div>
+            <div class="toggle-pannel">
+                <h4>Titre de la réponse</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores neque, quo eaque assumenda libero laboriosam aut quisquam cupiditate voluptatibus, aliquam natus est vero doloribus nihil rem consequatur? Necessitatibus, incidunt odio.n</p>
+            </div>
+        </div>
     </div>
-    <button class="question" onclick="toggleAnswer(2)">Pendant combien de temps est-il possible de renvoyer le produit ?"<br /></button>
-    <div class = "Answer" id = "Answer2" style="display:none;">
-      <p>La période de retour du produit s'élève à 2 semaines après réception du colis.</p>
-      </div>
-    <button class="question" onclick="toggleAnswer(3)">Sur quelles lignes des transports publics fonctionne OutSound ?"<br /></button>
-    <div class = "Answer" id = "Answer3" style="display:none;">
-      <p>Nous avons conçu OutSound pour qu'il fonctionne sur l'ensemble des lignes de métros du territoire, les personnalisations permettent néanmoins d'adapter très précisément l'atténuation à la ligne en question.</p>
-    </div>
-    <script>
-      function toggleAnswer(id){
-        var Answer = document.getElementById("Answer"+id);
-        if (Answer.style.display === 'none' || Answer.style.display === '') {
-                Answer.style.display = 'block';
-            } else {
-                Answer.style.display = 'none';
-            }
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="script.js"></script>
 
     <fieldset>
-      <legend>Vous ne trouvez pas ? Posez-nous votre question ici :</legend>
-      <form action="YOUR_FORM_ACTION_URL" method="POST" >
-        <input type="textarea" id="monTxt" placeholder="Saisissez votre question">
-        <script>
-          document.getElementById('monTxt').addEventListener('focus',function(){this.placeholder = '';})
-          document.getElementById('monTxt').addEventListener('blur',function(){
-            if(this.value ===''){
-              this.placeholder = 'Saisissez votre question';
-            }
-          });
-        </script>
-        <input type="submit" value="Envoyer">
-      </form>
-    </fieldset>
-    
-  </body>
+        <legend>Vous ne trouvez pas ? Posez-nous votre question ici :</legend>
+        <form  action="page de réception.html" method="POST" id="monFormulaire" >
+          <input type="textarea" id="monTxt" placeholder="Saisissez votre question">
+          <input type="submit" value="Envoyer">
+        </form>
+      </fieldset>
+      <div id="message">Nous avons bien reçu votre question, vus recevrez une réponse dans les plus brefs délais !</datagrid></div>
+</body>
+</html>

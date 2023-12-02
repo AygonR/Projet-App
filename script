@@ -1,0 +1,55 @@
+const allCross = document.querySelectorAll('.visible-pannel img');
+console.log(allCross);
+
+
+allCross.forEach(element => {
+
+    element.addEventListener('click', function(){
+
+        const height = this.parentNode.parentNode.childNodes[3].scrollHeight;
+
+        const currentChoice = this.parentNode.parentNode.childNodes[3];
+
+        // console.log(this.src);
+        if(this.src.includes('croix')){
+            this.src = 'C:/Users/rbagh/OneDrive/Documents/Site App/moins.png';
+            gsap.to(currentChoice, {duration: 0.2, height: height + 40, opacity: 1, padding: '20px 15px'})
+        } else if (this.src.includes('moins')){
+            this.src = 'C:/Users/rbagh/OneDrive/Documents/Site App/croix.png';
+            gsap.to(currentChoice, {duration: 0.2, height: 0, opacity: 0, padding: '0px 15px'})
+        }
+        
+    })
+
+})
+
+
+document.getElementById('monFormulaire').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêche le formulaire de s'envoyer normalement
+
+    // Affiche le message
+    var message = document.getElementById('message');
+    message.style.display = 'block';
+
+    // Masque le message après 3 secondes
+    setTimeout(function() {
+        message.style.display = 'none';
+    }, 3000);
+});
+
+document.getElementById('monTxt').addEventListener('focus',function(){this.placeholder = '';})
+document.getElementById('monTxt').addEventListener('blur',function(){
+    if(this.value ===''){
+        this.placeholder = 'Saisissez votre question';
+    }
+});
+
+document.getElementById('monFormulaire').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var message= document.getElementById("message");
+    message.style.display= 'block';
+    setTimeout(function(){
+      message.style.display = 'none';
+    
+    }, 3000);
+})

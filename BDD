@@ -4,18 +4,15 @@ CREATE TABLE Capteur(
 RefCapteur INT AUTO_INCREMENT PRIMARY KEY,
 PuissanceSon FLOAT,
 ConsoEnergie FLOAT,
-Utilisation DATETIME,
-);
+Utilisation DATETIME);
 
 CREATE TABLE Metro(
 NumLigne INT,
-StationDepart NULL,
-StationArrivee NULL,
-);
+StationDepart VARCHAR(50),
+StationArrivee VARCHAR(50));
 
 CREATE TABLE Utilisateur(
 IdClient INT AUTO_INCREMENT PRIMARY KEY,
 Nom VARCHAR(50),
 Prenom VARCHAR(50),
-AdresseMail VARCHAR(50),
-);
+AdresseMail VARCHAR(50));

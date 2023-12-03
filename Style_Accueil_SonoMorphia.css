@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* Styles globaux pour le corps de la page */
+body {
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+    color: #000000;
+    font-family: 'Lato', sans-serif;
+}
+
+body .page {
+    margin: 25px 90px;
+}
+
+/* Barre de navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    padding: 25px 90px;
+}
+
+nav .onglets {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+nav .onglets a {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+nav .buttons button {
+    padding: 13px 20px;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+}
+
+nav .buttons .login {
+    background-color: inherit;
+    margin-right: 10px;
+    color: #000000;
+}
+
+nav .buttons .register {
+    background-color: #F36958;
+}
+
+/* Header */
+header {
+    text-align: center;
+}
+
+.header-content {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 60px;
+    margin-top: 0px;
+    transition: transform 2.5s;
+}
+
+/* Pied de page */
+footer {
+    background-color: #f7f3f3;
+    padding: 25px 90px;
+    color: #000000;
+}
+
+footer .colonnes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Ajout de styles pour les blocs de contenu */
+.content-block {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #fff;
+    margin-left: 63px;
+}
+
+.content-block h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content-block p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Styles pour les flèches de navigation */
+.content-block a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content-block img {
+    width: 30px;
+    height: 30px;
+}
+
+.content-block .centered-image {
+  display: block; /* Pour centrer l'image */
+  margin: 0 auto; /* Pour centrer horizontalement */
+  width: 650px;
+  height: 350px;
+}
+
+/* Médias pour la mise en page mobile */
+@media screen and (max-width: 640px) {
+    body .page {
+        margin: 10px;
+    }
+
+    nav .onglets {
+        display: none;
+    }
+
+    header {
+        margin-top: 20px;
+        background-size: 250px 250px;
+    }
+
+    header h1 {
+        font-size: 30px;
+        padding: 100px;
+    }
+}

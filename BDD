@@ -1,1 +1,21 @@
-CREATE DATABASE data_sonomorphia;
+CREATE DATABASE OutSound CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE OutSound;
+CREATE TABLE Capteur(
+RefCapteur INT AUTO_INCREMENT PRIMARY KEY,
+PuissanceSon FLOAT,
+ConsoEnergie FLOAT,
+Utilisation DATETIME,
+);
+
+CREATE TABLE Metro(
+NumLigne INT,
+StationDepart NULL,
+StationArrivee NULL,
+);
+
+CREATE TABLE Utilisateur(
+IdClient INT AUTO_INCREMENT PRIMARY KEY,
+Nom VARCHAR(50),
+Prenom VARCHAR(50),
+AdresseMail VARCHAR(50),
+);

@@ -12,10 +12,10 @@ allCross.forEach(element => {
 
         // console.log(this.src);
         if(this.src.includes('croix')){
-            this.src = 'C:/Users/rbagh/OneDrive/Documents/Site App/moins.png';
+            this.src = 'moins.png';
             gsap.to(currentChoice, {duration: 0.2, height: height + 40, opacity: 1, padding: '20px 15px'})
         } else if (this.src.includes('moins')){
-            this.src = 'C:/Users/rbagh/OneDrive/Documents/Site App/croix.png';
+            this.src = 'croix.png';
             gsap.to(currentChoice, {duration: 0.2, height: 0, opacity: 0, padding: '0px 15px'})
         }
         
@@ -25,16 +25,32 @@ allCross.forEach(element => {
 
 
 document.getElementById('monFormulaire').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêche le formulaire de s'envoyer normalement
+    event.preventDefault(); //On empêche l'envoi
 
-    // Affiche le message
-    var message = document.getElementById('message');
-    message.style.display = 'block';
+    //On crée une nouvelle div pour la bannière
+    var banner = document.createElement('div');
 
-    // Masque le message après 3 secondes
+    //On applique le contenu de la bannière
+    var message = document.getElementById('message').textContent;
+    banner.textContent = message;
+
+    banner.style.backgroundColor = 'skyblue';
+    banner.style.color = "white";
+    banner.style.position = 'fixed';
+    banner.style.bottom = '0';
+    banner.style.width = '100%';
+    banner.style.padding = '10px';
+    banner.style.textAlign = 'center';
+    banner.style.fontSize = '40px';
+
+    // On attache la bannière au body
+    document.body.appendChild(banner);
+
+    // On retire la bannière après 5 secondes
     setTimeout(function() {
-        message.style.display = 'none';
-    }, 3000);
+        document.body.removeChild(banner);
+    }, 5000);
+    this.reset();
 });
 
 document.getElementById('monTxt').addEventListener('focus',function(){this.placeholder = '';})
@@ -44,12 +60,6 @@ document.getElementById('monTxt').addEventListener('blur',function(){
     }
 });
 
-document.getElementById('monFormulaire').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var message= document.getElementById("message");
-    message.style.display= 'block';
-    setTimeout(function(){
-      message.style.display = 'none';
     
     }, 3000);
 })

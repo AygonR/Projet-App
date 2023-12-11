@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-image: url('background.jpg');
-    background-size: 2318px 1318px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     margin: 0;
     min-height: 100vh;
@@ -12,13 +12,18 @@ body {
 }
 
 .register-container {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     width: 300px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 input {
@@ -26,10 +31,11 @@ input {
     padding: 10px;
     margin: 8px 0;
     box-sizing: border-box;
+    border-radius: 10px;
 }
 
 button {
-    background-color: #4caf50;
+    background-color: rgb(218, 125, 218);
     color: #ffffff;
     padding: 10px 15px;
     border: none;
@@ -46,6 +52,10 @@ p {
 a {
     color: #007bff;
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 a:hover {

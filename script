@@ -59,6 +59,3 @@ document.getElementById('monTxt').addEventListener('blur',function(){
         this.placeholder = 'Saisissez votre question';
     }
 }); 
-    
-    }, 3000);
-})

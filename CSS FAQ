@@ -18,6 +18,14 @@ h2{
     font-size: 40px;
 }
 
+body {
+    /* Other styles... */
+    background-image: url('fond2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Other styles... */
+}
+
 .container-faq{
     width: 70%;
     max-width: 900px;
@@ -109,6 +117,7 @@ input[type="text"] {
     border-radius: 5px;
     text-align: left;
     line-height: 1.5;
+    padding : 15px 15px;
 }
 
 input[type="submit"] {
@@ -120,6 +129,7 @@ input[type="submit"] {
     text-decoration: none; /* Remove the underline */
     display: inline-block;
     font-size: 16px;
+    align-items: right;
     margin: 4px 2px;
     cursor: pointer; /* Change the cursor when you hover over it */
     border-radius: 5px; /* Round the corners */

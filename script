@@ -58,8 +58,7 @@ document.getElementById('monTxt').addEventListener('blur',function(){
     if(this.value ===''){
         this.placeholder = 'Saisissez votre question';
     }
-});
-
+}); 
     
     }, 3000);
 })

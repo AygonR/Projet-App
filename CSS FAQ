@@ -134,6 +134,4 @@ input[type="submit"] {
     cursor: pointer; /* Change the cursor when you hover over it */
     border-radius: 5px; /* Round the corners */
 }
-    border-radius: 5px;
-}
 

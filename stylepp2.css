@@ -46,3 +46,30 @@ body {
   .form-group input[type="submit"]:hover {
     background-color: #45a049;
   }
+
+  /* Style pour le champ de fichier */
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f8f8f8; /* Couleur de fond */
+  color: #333; /* Couleur du texte */
+  cursor: pointer;
+  outline: none; /* Supprime la bordure de focus par défaut */
+}
+
+/* Style pour le bouton de téléchargement de fichier (optionnel) */
+.upload-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: #45a049;
+}

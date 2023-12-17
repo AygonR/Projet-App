@@ -27,6 +27,14 @@ allCross.forEach(element => {
 document.getElementById('monFormulaire').addEventListener('submit', function(event) {
     event.preventDefault(); //On empêche l'envoi
 
+    //On récupère le contenu du champ
+    var message = document.getElementById('monTxt').value;
+
+    //On vérifie si le champ est vide
+    if (!message.trim()) {
+        return; //On arrête l'exécution de la fonction si le champ est vide
+    }
+
     //On crée une nouvelle div pour la bannière
     var banner = document.createElement('div');
 

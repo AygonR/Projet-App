@@ -1,0 +1,12 @@
+<html>
+<head>
+    <h1>Hello World</h1>
+    <div id="demo2" style="width:200px">some text 2</div>
+    <div id="demo" style="width:200px">some text</div>
+    <script>
+    var x = document.getElementById("demo");
+    x.style.color = "6600FF";
+    x.style.width = "100px";
+    </script>
+</head>
+</html>

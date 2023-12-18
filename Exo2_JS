@@ -1,0 +1,10 @@
+let x=5+5;
+document.write(x);
+document.write("<br/>");
+x="5"+"5";
+document.write(x+"<br/>"); 
+x=5+1+"5";
+document.write(x);
+document.write("<br/>");
+x="5"+5+1;
+document.write(x);

@@ -1,0 +1,39 @@
+.header {
+    text-align: right;
+    padding: 10px;
+    background-color: #f2f2f2;
+	 position: relative;
+}
+
+#cart-link {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+#cart-icon {
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+}
+.product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px;
+}
+.product img {
+    max-width: 30%;
+    height: auto;
+}
+.add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.add-to-cart:hover {
+    background-color: #45a049;
+}
+

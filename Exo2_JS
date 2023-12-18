@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="myFile.js"> 
+Document.myFile(); 
+</script> 
+</head>
+</html>

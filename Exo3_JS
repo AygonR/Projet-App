@@ -2,7 +2,7 @@
 <html>
 <head>
 <script src="myFile2.js"> 
-Document.myFile2(2); 
+document.myFile2(2); 
 </script> 
 </head>
 </html>

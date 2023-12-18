@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produits | Mon Site E-commerce</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Ma Boutique en Ligne</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Nos Produits</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="produits.html">Produits</a></li>
-                <li><a href="panier.html">Panier</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <article>
-                <h2>Produit 1</h2>
-                <p>Description du produit 1.</p>
-                <button>Ajouter au panier</button>
-            </article>
-            <article>
-                <h2>Produit 2</h2>
-                <p>Description du produit 2.</p>
-                <button>Ajouter au panier</button>
-            </article>
-            <!-- Ajoutez plus de produits ici -->
-        </section>
-    </main>
+
+    <div class="header">
+        <a href="#" id="cart-link" onclick="showCart()">Mon panier</a>
+		<img src="panier.png" alt="Panier" id="cart-icon">
+    
+    </div>
+
+    <h1>Bienvenue sur Ma Boutique en Ligne</h1>
+
+    <div class="product" id="product1">
+        <h2>Produit 1</h2>
+        <img src="produit1.png" alt="Produit 1">
+        <p>Prix: 20€</p>
+        <button class="add-to-cart" onclick="addToCart('Produit 1', 20)">Ajouter dans le panier</button>
+    </div>
+
+    <div class="product" id="product2">
+        <h2>Produit 2</h2>
+        <img src="produit2.png" alt="Produit 2">
+        <p>Prix: 35€</p>
+        <button class="add-to-cart" onclick="addToCart('Produit 2', 35)">Ajouter dans le panier</button>
+    </div>
+
+    <!-- Continuer avec d'autres produits -->
+
+    <script src="script.js"></script>
+
 </body>
 </html>

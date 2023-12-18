@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<script src="myFile2.js"> 
-Document.myFile2(2); 
-</script> 
-</head>
-</html>
+let x=5+5;
+document.write(x);
+document.write("<br/>");
+x="5"+"5";
+document.write(x+"<br/>"); 
+x=5+1+"5";
+document.write(x);
+document.write("<br/>");
+x="5"+5+1;
+document.write(x);

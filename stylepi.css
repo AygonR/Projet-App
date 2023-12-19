@@ -1,45 +1,60 @@
- body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f4f4f4;
-    }
-    .profile-container {
-      max-width: 600px;
-      margin: 0 auto;
-      border: 1px solid #ccc;
-      padding: 20px;
-      border-radius: 5px;
-      background-color: #fff;
-    }
-    .profile-container h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    .profile-container p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 8px;
-    }
-    .profile-container strong {
-      font-weight: bold;
-    }
-    .edit-btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .edit-btn:hover {
-      background-color: #45a049;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-image: url("background.jpeg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-     /* Ajoutez des styles pour l'affichage de l'image */
-    .profile-img {
-      max-width: 200px;
-      max-height: 200px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.profile-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.profile-container p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.profile-container strong {
+  font-weight: bold;
+}
+
+.edit-btn {
+  background-color: rgb(218, 125, 218);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: rgb(218, 125, 218);
+}
+
+.profile-img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  /* Ajout des propriétés pour centrer la photo de profil */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

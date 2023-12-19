@@ -15,13 +15,13 @@ h1{
 h2{
     text-align: center;
     padding : 35px 0;
-    font-size: 40px;
-    color: rgba(156, 53, 165, 0.562);
+    font-size: 39.5px;
+    color: rgba(0, 0, 0, 0.8);
     font-weight: bold;
 }
 
 body {
-    background-image: url('fond2.jpg');
+    background-image: url('fond.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -49,7 +49,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background:  linear-gradient(to right, Plum, SkyBlue);
+    background:  linear-gradient(to right, rgba(250, 119, 253, 0.5), rgba(135, 209, 250, 0.5));
     border-radius: 10px;
     position: relative;
     z-index: 100;
@@ -70,13 +70,14 @@ body {
     padding: 0px 15px;
     height: 0px;
     opacity: 0;
-    background-color: azure;
+    background: linear-gradient(to right, rgba(238, 145, 240, 0.25), rgba(100, 194, 245, 0.25));
     border-radius: 10px;
 }
 
 .toggle-pannel h4 {
     font-size: 18px;
     padding-bottom: 10px;
+    font-weight : bold;
 }
 
 .toggle-pannel p{
@@ -86,52 +87,57 @@ body {
 #message {
     display: none;
     padding: 10px;
-    background-color: skyblue;
+    background-color: rgba(100, 194, 245, 0.2);
     color: #fff;
     border-radius: 5px;
 }
 
 input[type="text"] {
-    background-color: #f9f9f9; 
-    color: #333;
-    font-size: 18px; 
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 5px; 
-    max-width: 900px;
-    min-width: 500px;
+    padding: 12px 20px; /* Espace intérieur */
+    margin: 8px 0; /* Marge extérieure */
+    box-sizing: border-box; /* Pour que padding et border ne modifient pas la largeur totale */
+    border: 2px solid #ccc; /* Bordure */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: #f8f8f8; /* Couleur de fond */
+    font-size: 16px; /* Taille de texte */
+    /*flex-grow: 0.5; /* Prendre tout l'espace disponible */
+    margin-right: 10px; /* Ajout d'une marge à droite pour espacer le bouton */
+    width : 725px;
 }
 
+.input-container {
+    display: flex;
+    flex-direction: row; /* Apply to only text field and submit button */
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
 .interaction {
     max-width: 900px;
     min-width: 500;
     height: auto;
     margin: 10px auto 5px;
     display: flex;
-    flex-direction: column ;
+    flex-direction: column; /* Change to column for vertical layout */
     align-items: flex-start;
     margin-top : 40px;
     font-size: 20px;
     font-weight: bold;
-    background-color : azure;
-    border-radius: 5px;
+    background-color : rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
     text-align: left;
     line-height: 1.5;
     padding : 15px 15px;
 }
-
 input[type="submit"] {
-    background-color: skyblue; 
+    background-color: #111052; 
     color: #fff;
     border: none; 
-    padding: 15px 32px;
-    text-align: center; 
+    padding: 15px 32px; 
     text-decoration: none; 
     display: inline-block;
     font-size: 16px;
-    align-items: right;
     margin: 4px 2px;
     cursor: pointer; 
     border-radius: 5px; 
 }
-

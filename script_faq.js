@@ -42,7 +42,7 @@ document.getElementById('monFormulaire').addEventListener('submit', function(eve
     var message = document.getElementById('message').textContent;
     banner.textContent = message;
 
-    banner.style.backgroundColor = 'skyblue';
+    banner.style.backgroundColor = 'rgba(198,255,170,0.5)';
     banner.style.color = "white";
     banner.style.position = 'fixed';
     banner.style.bottom = '0';

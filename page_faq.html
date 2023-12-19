@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="testbouton.css" rel="stylesheet">
+    <link href="style_faq.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
         <style>
             body,h1,h2,h3,h4,p {font-family: "Raleway", sans-serif}
@@ -14,10 +14,10 @@
     <title>Sonomorphia | FAQ et Questions Récurrentes</title>
     <h1>
         <a href ="https://www.amazon.fr/Nouveau-Apple-AirPods-Max-Gris-sid%C3%A9ral/dp/B08Q2CYLTQ/ref=sr_1_10?keywords=apple%2Bairpods&qid=1702369157&sr=8-10&th=1">
-            <img src = "letsgo.png"  class="header-image" >
+            <img src = "logo_sonomorphia.png"  class="header-image" >
         </a>
     </h1>
-    <h2>Vous avez des questions ? Regardez tout d'abord quelques exemples récurrents :</h1>
+    <h2>Vous avez des questions ? Bienvenue sur la FAQ !</h1>
     <div class="container-faq">
         <div class="questions">
             <div class="visible-pannel">
@@ -52,15 +52,16 @@
     </div>
     <div class = "interaction">
         <p>Vous avez une question autre que celles ci-desssus ? Posez-la nous ici :</p>
-        <form method="POST" id="monFormulaire" >
-            <input type="text" id="monTxt" placeholder="Saisissez votre question">
-            <input type="submit" value="Envoyer">
-        </form>
-    </div>
+        <div class="input-container">
+            <form method="POST" id="monFormulaire" >
+                <input type="text" id="monTxt" placeholder="Saisissez votre question">
+                <input type="submit" value="Envoyer">
+            </form>
+        </div>
     <div id="message">Nous avons bien reçu votre question, vous recevrez une réponse dans les plus brefs délais !</datagrid></div>
     
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="script_faq.js"></script>
 </body>
 </html>

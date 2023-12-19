@@ -1,161 +1,68 @@
-*, ::before, ::after{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.page_de_connexion {
-    float: right;
-    padding: 10px 20px;
-    font-size: 20px;
-    color: white;
-    background-color: rgba(135, 209, 250);
-    text-decoration: none;
-    border-radius: 5px;
-    margin-right: 80px;
-    margin-top: 40px;
-    border: rgba(135, 209, 250,0.75) 2px solid;
-}
-
-.highlight {
-    color: rgba(250, 119, 253,0.5); /* Remplacez "red" par la couleur de votre choix */
-    font-weight: bold;
-}
-
-.header-image {
-    max-width: 2500px;
-    max-height: 100px;
-}
-
-h1{
-    text-align: left;
-}
-h2{
-    text-align: center;
-    padding : 35px 0;
-    font-size: 39.5px;
-    color: rgba(0, 0, 0, 0.8);
-    font-weight: bold;
-}
-
-body {
-    background-image: url('fond.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.container-faq{
-    width: 70%;
-    max-width: 900px;
-    min-width: 500;
-    height: auto;
-    margin: 10px auto 0;
-    display: flex;
-    flex-direction: column ;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.questions{
-    width: 100%;
-    height: auto;
-    margin: 5px;
-    color: black;
-}
-
-.visible-pannel{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background:  linear-gradient(to right, rgba(250, 119, 253, 0.5), rgba(135, 209, 250, 0.5));
-    border-radius: 10px;
-    position: relative;
-    z-index: 100;
-}
-
-.visible-pannel h3{
-    margin-left: 10px;
-    padding: 15px 5px;
-    font-size: 24px;
-}
-.visible-pannel img{
-    margin-right: 10px;
-    width: 25px;
-    cursor: pointer;
-}
-
-.toggle-pannel {
-    padding: 0px 15px;
-    height: 0px;
-    opacity: 0;
-    background: linear-gradient(to right, rgba(238, 145, 240, 0.25), rgba(100, 194, 245, 0.25));
-    border-radius: 10px;
-}
-
-.toggle-pannel h4 {
-    font-size: 18px;
-    padding-bottom: 10px;
-    font-weight : bold;
-}
-
-.toggle-pannel p{
-    line-height: 1.5;
-}
-
-#message {
-    display: none;
-    padding: 10px;
-    background-color: rgba(100, 194, 245, 0.2);
-    color: #fff;
-    border-radius: 5px;
-}
-
-input[type="text"] {
-    padding: 12px 20px; /* Espace intérieur */
-    margin: 8px 0; /* Marge extérieure */
-    box-sizing: border-box; /* Pour que padding et border ne modifient pas la largeur totale */
-    border: 2px solid #ccc; /* Bordure */
-    border-radius: 10px; /* Coins arrondis */
-    background-color: #f8f8f8; /* Couleur de fond */
-    font-size: 16px; /* Taille de texte */
-    /*flex-grow: 0.5; /* Prendre tout l'espace disponible */
-    margin-right: 10px; /* Ajout d'une marge à droite pour espacer le bouton */
-    width : 725px;
-}
-
-.input-container {
-    display: flex;
-    flex-direction: row; /* Apply to only text field and submit button */
-    justify-content: space-between;
-    width: 100%;
-    align-items: center;
-}
-.interaction {
-    max-width: 900px;
-    min-width: 500;
-    height: auto;
-    margin: 10px auto 5px;
-    display: flex;
-    flex-direction: column; /* Change to column for vertical layout */
-    align-items: flex-start;
-    margin-top : 40px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color : rgba(255, 255, 255, 0.5);
-    border-radius: 15px;
-    text-align: left;
-    line-height: 1.5;
-    padding : 15px 15px;
-}
-input[type="submit"] {
-    background-color: #111052; 
-    color: #fff;
-    border: none; 
-    padding: 15px 32px; 
-    text-decoration: none; 
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer; 
-    border-radius: 5px; 
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style_faq.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <style>
+            body,h1,h2,h3,h4,p {font-family: "Raleway", sans-serif}
+        </style>
+    <title>Sonomorphia | FAQ et Questions Récurrentes </title>
+</head>
+<body>
+    <title>Sonomorphia | FAQ et Questions Récurrentes</title>
+    <h1>
+        <a href ="https://www.amazon.fr/Nouveau-Apple-AirPods-Max-Gris-sid%C3%A9ral/dp/B08Q2CYLTQ/ref=sr_1_10?keywords=apple%2Bairpods&qid=1702369157&sr=8-10&th=1">
+            <img src = "logo_sonomorphia.png"  class="header-image" >
+        </a>
+        <a href="Register.html" class="page_de_connexion">Connexion</a>
+    </h1>
+    <h2>Vous avez des questions ? Bienvenue sur la <span class="highlight">FAQ</span> !</h1>
+    <div class="container-faq">
+        <div class="questions">
+            <div class="visible-pannel">
+                <h3>Quelle est l'autonomie moyenne d'OutSound ?</h2>
+                <img src="croix.png" alt="croix animation">
+            </div>
+            <div class="toggle-pannel">
+                <h4>Réponse de l'équipe</h4>
+                <p>L'autonomie prévue avec une utilisation normale du produit est de 4 à 5 heures.</p>
+            </div>
+        </div>
+        <div class="questions">
+            <div class="visible-pannel">
+                <h3>Quelle est la période de retour du produit après récéption ?</h2>
+                <img src="croix.png" alt="croix animation">
+            </div>
+            <div class="toggle-pannel">
+                <h4>Réponse de l'équipe</h4>
+                <p>La période de retour du produit s'élève à 2 semaines après réception du colis.</p>
+            </div>
+        </div>
+        <div class="questions">
+            <div class="visible-pannel">
+                <h3>Quelles sont les lignes prises en charge par l'appareil en fonctionnement ?</h2>
+                <img src="croix.png" alt="croix animation">
+            </div>
+            <div class="toggle-pannel">
+                <h4>Réponse de l'équipe</h4>
+                <p>Nous avons conçu OutSound pour qu'il fonctionne sur l'ensemble des lignes de métros du territoire, les personnalisations permettent néanmoins d'adapter très précisément l'atténuation à la ligne en question.</p>
+            </div>
+        </div>
+    </div>
+    <div class = "interaction">
+        <p>Vous avez une question autre que celles ci-desssus ? Posez-la nous ici :</p>
+        <div class="input-container">
+            <form method="POST" id="monFormulaire" >
+                <input type="text" id="monTxt" placeholder="Saisissez votre question">
+                <input type="submit" value="Envoyer">
+            </form>
+        </div>
+    <div id="message">Nous avons bien reçu votre question, vous recevrez une réponse dans les plus brefs délais !</datagrid></div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="script_faq.js"></script>
+</body>
+</html>

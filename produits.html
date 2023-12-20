@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
+		
     <title>Ma Boutique en Ligne</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
-    <div class="header">
-        <a href="#" id="cart-link" onclick="showCart()">Mon panier</a>
-		<img src="panier.png" alt="Panier" id="cart-icon">
-    
+
+    <div class="logo">
+        <img src="logo-us.png" alt="Logo">
     </div>
 
-    <h1>Bienvenue sur Ma Boutique en Ligne</h1>
+    <div class="header">
+        <div class="identification">
+            <a href="login.html">
+			<img src="identification.png" alt="Cliquez pour vous identifier">
+			</a>
 
+            <span class="tooltip">Identifiez-vous</span>
+        </div>
+        <div class="cart">
+            <a href="#" onclick="showCart()"><img src="panier.png" alt="Panier" id="cart-icon"></a>
+            <span class="tooltip"></span>
+        </div>
+    </div>
+
+    <h1>Découvrez nos produits :</h1>
+
+<div class="products-container">
     <div class="product" id="product1">
-        <h2>Produit 1</h2>
+        <h2>AirSound 2.0</h2>
         <img src="produit1.png" alt="Produit 1">
         <p>Prix: 20€</p>
-        <button class="add-to-cart" onclick="addToCart('Produit 1', 20)">Ajouter dans le panier</button>
+        <button class="add-to-cart" onclick="addToCart('AirSound 2.0', 20)">Ajouter dans le panier</button>
     </div>
 
     <div class="product" id="product2">
-        <h2>Produit 2</h2>
+        <h2>Airsound 1.0</h2>
         <img src="produit2.png" alt="Produit 2">
         <p>Prix: 35€</p>
-        <button class="add-to-cart" onclick="addToCart('Produit 2', 35)">Ajouter dans le panier</button>
+        <button class="add-to-cart" onclick="addToCart('AirSound 1.0', 35)">Ajouter dans le panier</button>
     </div>
+</div>
 
     <!-- Continuer avec d'autres produits -->
 

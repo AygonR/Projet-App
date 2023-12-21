@@ -10,13 +10,44 @@
         </style>
     <title>Sonomorphia | Q&A and recurring questions</title>
 </head>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "outsound";
+// Créer une connexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+//Vérifier la connexion
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+ echo "Connected successfully";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $question = $_POST['question_posee'];
+
+    // Préparer et lier
+    $stmt = $conn->prepare("INSERT INTO formulaire (question) VALUES (?)");
+    $stmt->bind_param("s", $question);
+
+    // Exécuter
+    if ($stmt->execute() === TRUE) {
+      echo "Question submitted successfully";
+  } else {
+      echo "Error: ". $stmt->error;
+  }
+    $stmt->close();
+    $conn->close();
+}
+?>
 <body>
     <h1>
         <a href ="https://www.amazon.fr/Nouveau-Apple-AirPods-Max-Gris-sid%C3%A9ral/dp/B08Q2CYLTQ/ref=sr_1_10?keywords=apple%2Bairpods&qid=1702369157&sr=8-10&th=1">
             <img src = "logo_sonomorphia.png"  class="header-image" >
         </a>
         <a href="Register.html" class="page_de_connexion">Connexion</a>
-        <a href="page_faq.html" class="langue_page">Français</a>
+        <a href="page_faq.php" class="langue_page">Français</a>
     </h1>
     <h2>Do you have a question ? Welcome on our <span class="highlight">Q&A</span> !</h1>
     <div class="container-faq">
@@ -54,8 +85,8 @@
     <div class = "interaction">
         <p>You've got another question than the ones above ? Ask us directly right below :</p>
         <div class="input-container">
-            <form method="POST" id="monFormulaire" >
-                <input type="text" id="monTxt" placeholder="Saisissez votre question">
+            <form method="POST" id="monFormulaire" name ="question_posee" action="traitement_question.php" >
+                <input type="text" id="monTxt" placeholder="Write your question">
                 <input type="submit" value="Envoyer">
             </form>
         </div>

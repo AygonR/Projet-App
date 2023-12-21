@@ -1,0 +1,34 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="RegisterStyles.css">
+</head>
+
+<body>
+
+    <div class="register-container">
+        <h2>Registration</h2>
+        <form action="/your-processing-page" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+    <a href="Register.html" style="position: fixed; bottom: 0; right: 0;">
+        <img src="FRflag.jpg" alt="French Flag" style="width: 50px;">
+    </a>
+
+</body>
+
+</html>

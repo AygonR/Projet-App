@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="stylepp2.css">
+
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Edit Profile</h1>
+        <form action="/edit_profile" method="post">
+            <div class="form-group">
+                <label for="nom">Last Name:</label>
+                <input type="text" id="nom" name="nom" value="Doe">
+            </div>
+            <div class="form-group">
+                <label for="prenom">First Name:</label>
+                <input type="text" id="prenom" name="prenom" value="John">
+            </div>
+            <div class="form-group">
+                <label for="adresse">Delivery Address:</label>
+                <input type="text" id="adresse" name="adresse" value="123 Example Street, ExampleCity">
+            </div>
+            <div class="form-group">
+                <label for="date_naissance">Date of Birth:</label>
+                <input type="date" id="date_naissance" name="date_naissance" value="1990-01-01">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" value="johndoe@example.com">
+            </div>
+            <div class="form-group">
+                <label for="telephone">Phone Number:</label>
+                <input type="tel" id="telephone" name="telephone" value="+33 6 12 34 56 78">
+            </div>
+            <div class="form-group">
+                <label for="mot_de_passe">New Password:</label>
+                <input type="password" id="mot_de_passe" name="mot_de_passe">
+            </div>
+
+
+            <div class="form-group">
+                <label for="photo">Profile Picture:</label>
+                <input type="file" id="photo" name="photo">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save Changes" formaction="redi_EN.html">
+            </div>
+            <a href="pp2.html" style="position: fixed; bottom: 0; right: 0;">
+                <img src="FRflag.jpg" alt="French Flag" style="width: 50px;">
+            </a>
+
+        </form>
+    </div>
+</body>
+
+</html>

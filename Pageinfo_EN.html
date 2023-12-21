@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Profil Utilisateur</title>
+  <link rel="stylesheet" href="stylepi.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      font-family: "Raleway", sans-serif
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Affichage de la photo de profil -->
+  <img class="profile-img" src="Photo.PNG" alt="Photo de profil">
+  <div class="profile-container">
+    <h1>User Profile</h1>
+    <p><strong>Family name :</strong> Doe</p>
+    <p><strong>First name :</strong> John</p>
+    <p><strong>Delivery address :</strong> 123 Rue de l'Exemple, VilleExemple</p>
+    <p><strong>Date of birth :</strong> 01/01/1990</p>
+    <p><strong>e-mail address:</strong> johndoe@example.com</p>
+    <p><strong>Phone number :</strong> +33 6 12 34 56 78</p>
+    <button class="edit-btn" onclick="redirect()">Edit informations</button>
+  </div>
+
+  <script>
+    function redirect() {
+      window.location.href = "pp2.html";
+    }
+  </script>
+</body>
+
+</html>

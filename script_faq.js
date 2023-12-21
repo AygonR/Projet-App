@@ -37,12 +37,13 @@ document.getElementById('monFormulaire').addEventListener('submit', function(eve
 
     //On crée une nouvelle div pour la bannière
     var banner = document.createElement('div');
+    banner.className = 'banner'
 
     //On applique le contenu de la bannière
     var message = document.getElementById('message').textContent;
     banner.textContent = message;
 
-    banner.style.backgroundColor = 'rgba(198,255,170,0.8)';
+    banner.style.backgroundColor = 'rgba(41, 122, 0, 0.5)';
     banner.style.color = "white";
     banner.style.position = 'fixed';
     banner.style.bottom = '0';
@@ -56,14 +57,17 @@ document.getElementById('monFormulaire').addEventListener('submit', function(eve
 
     // On retire la bannière après 5 secondes
     setTimeout(function() {
-        document.body.removeChild(banner);
-    }, 5000);
+        banner.style.animation = 'slideOut 1s forwards';
+        setTimeout(function() {
+            document.body.removeChild(banner);
+    }, 1000);
+    }, 6000);;
     this.reset();
-});
+
 
 document.getElementById('monTxt').addEventListener('focus',function(){this.placeholder = '';})
 document.getElementById('monTxt').addEventListener('blur',function(){
     if(this.value ===''){
         this.placeholder = 'Saisissez votre question';
     }
-}); 
+})}) 

@@ -172,3 +172,25 @@ input[type="submit"] {
     cursor: pointer; 
     border-radius: 5px; 
 }
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.banner {
+    animation: slideIn 1s forwards;
+}

@@ -1,0 +1,39 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "exo";
+
+// Créer une connexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vos paramètres de connexion à la base de données ici
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"];
+
+    try {
+        // Crée une connexion PDO
+        $pdo = new PDO("mysql:host=localhost;dbname=exo");
+
+        // Configure le PDO pour lever des exceptions en cas d'erreur
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // Vérifie si l'e-mail existe déjà dans la base de données
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM votre_table WHERE ueMail = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+
+        if ($count > 0) {
+            // L'e-mail existe déjà, renvoie une réponse JSON avec un message d'erreur
+            echo json_encode(array('error' => true, 'message' => 'L\'e-mail est déjà utilisé. Veuillez choisir un autre e-mail.'));
+        } else {
+            // L'e-mail n'existe pas, renvoie une réponse JSON avec succès
+            echo json_encode(array('error' => false));
+        }
+    } catch (PDOException $e) {
+        // Gère les erreurs de la base de données
+        echo json_encode(array('error' => true, 'message' => 'Cet email est déjà utilisé.'));
+    }
+}

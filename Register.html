@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'Inscription</title>
+    <title>Page d'inscription</title>
     <link rel="stylesheet" href="RegisterStyles.css">
 </head>
 
@@ -11,7 +11,7 @@
 
     <div class="register-container">
         <h2>Inscription</h2>
-        <form action="/votre-page-de-traitement" method="post">
+        <form action="connection-db.php" method="post">
             <label for="username">Nom d'utilisateur :</label>
             <input type="text" id="username" name="username" required>
 
@@ -21,7 +21,7 @@
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit">S'Inscrire</button>
+            <button type="submit">S'inscrire</button>
         </form>
         <p>Vous avez déjà un compte ? <a href="login.html">Se connecter</a></p>
     </div>

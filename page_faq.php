@@ -10,37 +10,7 @@
         </style>
     <title>Sonomorphia | FAQ et Questions Récurrentes </title>
 </head>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "outsound";
-// Créer une connexion
-$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-//Vérifier la connexion
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
- echo "Connected successfully";
-
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $question = $_POST['question_posee'];
-
-    // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO formulaire (IdQuestion, question, Pseudo_user, mail_user) VALUES (NULL, ?, NULL, NULL)");
-    $stmt->bind_param("s", $question);
-
-    // Execute
-    if ($stmt->execute()) {
-        echo "Nouveau enregistrement créé avec succès";
-    } else {
-        echo "Erreur : " . $stmt->error;
-    }
-    $stmt->close();
-    $conn->close();
-}
-?>
 <body>
     <h1>
         <a href ="https://www.amazon.fr/Nouveau-Apple-AirPods-Max-Gris-sid%C3%A9ral/dp/B08Q2CYLTQ/ref=sr_1_10?keywords=apple%2Bairpods&qid=1702369157&sr=8-10&th=1">

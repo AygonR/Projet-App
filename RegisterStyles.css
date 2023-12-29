@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg');
+    background-image: url('bg.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin: 0;
@@ -21,14 +21,14 @@ body {
     margin-top: 10px;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 53%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin: 8px 0;
     box-sizing: border-box;
     border-radius: 10px;
@@ -37,7 +37,7 @@ input {
 button {
     background-color: rgb(218, 125, 218);
     color: #ffffff;
-    padding: 10px 15px;
+    padding: 8px 13px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -46,7 +46,8 @@ button {
 
 p {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-top: 5px;
 }
 
 a {

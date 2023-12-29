@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "faq";
+$dbname = "outsound";
 
 
 // Récupérer les valeurs du formulaire

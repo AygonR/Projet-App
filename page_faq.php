@@ -85,8 +85,10 @@ if ($conn->connect_error) {
     <div class = "interaction">
         <p>Vous avez une question autre que celles ci-desssus ? Posez-la nous ici :</p>
         <div class="input-container">
-            <form method="POST" id="monFormulaire" name ="question_posee">
-                <input type="text" id="monTxt" name = "question_posee" placeholder="Saisissez votre question">
+            <form action ="question_posee" method="post">
+                <label for="query">Saisissez votre question :</label>
+                <input type="text" id="query" name="query" required>
+
                 <input type="submit" value="Envoyer">
             </form>
         </div>
@@ -97,3 +99,7 @@ if ($conn->connect_error) {
     <script src="script_faq.js"></script>
 </body>
 </html>
+
+
+
+

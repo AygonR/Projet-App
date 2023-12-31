@@ -14,7 +14,8 @@ if (isset($_POST['submit'])) {
         $row = mysqli_fetch_assoc($select);
         if (password_verify($pass, $row['password'])) {
             $_SESSION['user_id'] = $row['id'];
-            header('location:home.php');
+            $_SESSION['username'] = $row['name'];
+            header('location:salut.php');
         } else {
             $message[] = 'Incorrect email or password!';
         }

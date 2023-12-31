@@ -21,13 +21,18 @@
 <body>
     <div class="message-container">
         <?php
-        echo "Votre profil a bien été créé !";
+        session_start(); // Assurez-vous de démarrer la session
+        if (isset($_SESSION['username'])) {
+            echo "Hello " . $_SESSION['username'] . "!";
+        } else {
+            echo "Hello!";
+        }
         ?>
     </div>
 </body>
 <script>
     setTimeout(function() {
-        window.location.href = "login.php";
+        window.location.href = "accueil.html";
     }, 3000);
 </script>
 

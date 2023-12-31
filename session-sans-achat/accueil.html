@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style1.css">
+    <style>
+    body,h1,h2,h3,h4,h5,h6, #myButton, .connexion {font-family: "Raleway", sans-serif}
+    </style>
+  </head>
+<body>
+<div>
+  <div class = "conteneur" id="home">
+    <div class="partie1">
+      <a href="AccueilFR.html">
+      <img src="logo-us3.png" alt="logo" class="logo-image" width="270" height="54">
+    </a>
+    </div>
+  <div class="partie2">
+    <!--<img src="D:\\A1 23-24\\ImagesWeb\\logo-about.png" width="19" height="20">-->
+    <a href="#about" class="lil-dec">ABOUT US</a>
+    <!--<img class='petit_decalage' src="D:\\A1 23-24\\ImagesWeb\\logo-outsound.png" width="19" height="20">-->                                            
+    <a href="OutSound_presentation.html">OUTSOUND</a>
+    <!--<img src="D:\\A1 23-24\\ImagesWeb\\logo-faq.png" width="23" height="21">-->
+    <a href="HTML_FAQ.html">FAQ</a>
+    <!--<img src="D:\\A1 23-24\\ImagesWeb\\logo-contact.png" width="20" height="18">-->
+    <a href="#contact" class="button1">CONTACT</a>
+  </div>
+    <div class="partie4">   
+      <div class="search-box">
+      <form action="">
+      <input type="text" name="search" id = "srch" placeholder="Search">
+      <button type="submit"><i class= "fa fa-search"></i></button>
+      </form>
+      </div> 
+    </div>
+    <div class="partie3">                                                                                                                         
+      <button class="connexion"><a href="Login.html">Log in</a></button>
+      <button class="connexion"><a href="Register.html">Sign in</a></button>
+    </div>
+</div>
+
+<header id="home1">
+    <div class ="div-banniere">
+      <img src="banniere.png" alt="fond" width="100%" height="590">
+    </div> 
+</header>
+
+<!-- About Section -->
+<div id="about">
+    <h1 style="text-align: center;">ABOUT THE COMPANY</h1>
+    <h3 style="text-align: center;">What makes us who we are</h3>
+    <div class="conteneurs">
+        <div class="part">
+          <h4 style="text-align: center;">OutSoud</h4>
+          <img src="headphones.png" class="align" width="115" height="104">
+          <p class="description"> Introducing our flagship product – noise-reducing wireless headphones OutSound. <br> At SonoMoprhia, we redefine the audio landscape with our state-of-the-art headphones that seamlessly blend cutting-edge technology with sleek design. <br> Immerse yourself in a world of immersive sound, free from the distractions of the outside world.<br> Our wireless headphones boast advanced noise reduction capabilities, ensuring that you experience your music, calls, and entertainment with unparalleled clarity. <br> Elevate your audio experience with SonoMoprhia's signature blend of performance and sophistication.
+          </p>
+          <button id="myButton">Learn more about OutSound</button>
+          <script>
+            document.getElementById("myButton").addEventListener("click", function() {
+              window.location.href = "OutSound_presentation.html"; // Remplacez "nouvelle_page.html" par le chemin de la nouvelle page
+            });
+          </script>
+        </div>
+        <div class="part">
+          <h4 style="text-align: center;">Serenity</h4>
+          <img src="feelcalmbg.png" class="align" width="115" height="104">
+          <p class="description">In the fast-paced and noisy world we live in, finding moments of serenity is a rare luxury. <br> At SonoMorphia, we understand the importance of tranquility in your life. <br> Our products are not just about delivering outstanding performance; they are crafted to provide a sanctuary of peace amidst the chaos. <br> Immerse yourself in the serenity of uninterrupted, high-quality sound that transports you to a realm of calm with OutSound. <br> We believe that technology should not only elevate your senses but also bring serenity to your everyday moments.
+          </p>
+        </div>
+        <div class="part">
+          <h4 style="text-align: center;">Performance</h4>
+          <img src="perfbg.png" class="align" width="115" height="104">
+          <p class="description"> At SonoMorphia, we take pride in our unwavering commitment to performance excellence. Our cutting-edge technology is meticulously engineered to deliver an unparalleled audio experience. We strive to set new benchmarks in the industry, ensuring that our customers enjoy crystal-clear sound, robust connectivity, and innovative features. Our dedication to performance is the driving force behind every product we create, pushing the boundaries of what's possible in the world of audio technology.
+          </p>
+        </div>
+    </div>
+</div>  
+
+<!-- Promo Section "Statistics" -->
+
+<div id="number">
+  <h1 style="text-align: center;">KEY FIGURES</h1>
+  <h3 style="text-align: center;">Since now...</h3>
+  <div class="conteneur" id="bg">
+      <div class="partie" style="text-align: center;">
+      <p>10+</p> 
+      <p>Partners</p>
+    </div>
+    <div class="partie" style="text-align: center;">
+      <p>98%+</p>
+      <p>Sound reduced</p>
+    </div>
+    <div class="partie" style="text-align: center;">
+      <p>89k+</p>
+      <p>Happy Clients</p>
+    </div>
+    <div class="partie" style="text-align: center;">
+      <p>23+</p>
+      <p>Number of countries where we are</p>
+    </div>
+  </div>
+</div>  
+
+
+
+
+
+<!-- Contact Section -->
+<div id="contact">
+    <h1 style="text-align: center;">CONTACT</h1>
+    <h3 style="text-align: center;">Lets get in touch. Send us a message:</h3>
+    <div style= "text-align: center;">
+      <form action="contacthome.php" method="post">
+        <p><input type="text" placeholder="Name" required name="Name"><br>
+        <input type="text" placeholder="Lastname" required name="Lastname"><br>
+        <input type="text" placeholder="Email" required name="Email"><br>
+        <input type="text" placeholder="Subject" required name="Subject"><br>
+        <input type="text" placeholder="Message" required name="Message"></p>
+        <button type="submit" class="envoyer-bouton">
+          Send message
+          <img src="avion1.png" alt="Avion en papier" width="20" height="20">
+        </button>
+      </form>
+    </div>
+      <div style="position: relative; margin-top: 20px;">
+        <img src="localisation_SonoMorphia.png" style="width: 100%;" alt="Localisation SonoMorphia">
+        <p style="position: absolute; top: 90%; left:12%; transform: translate(-50%, -50%); font-weight: bold; font-size: 23px; color: #ffffff;">
+            Washington D.C., États-Unis <br>
+            Phone: +(703) 879-7725 <br>
+            Email: hello@sonomorphia.com
+        </p>
+      </div>    
+  </div>
+
+
+
+<footer class="footer">
+    <a href="#home" class="go_up">To the top</a>
+    <div class="emoji-bar">
+      <button class="image-button" id="myButton1">
+        <img class='tee' src="LinkIn.png" alt="Page_LinkedIn" width="30" height="23">
+      </button>
+      <script>
+        document.getElementById("myButton1").addEventListener("click", function() {
+            window.location.href = "https://fr.linkedin.com/school/institut-sup%C3%A9rieur-d'electronique-de-paris/"; // Remplacez "nouvelle_page.html" par le chemin de la nouvelle page
+        });
+      </script>
+      <button class="image-button instagram-button" id="myButton2">
+        <img class='tee' src="Insta.png" alt="Page_Insta" width="30" height="23">
+      </button>
+      <script>
+        document.getElementById("myButton2").addEventListener("click", function() {
+            window.location.href = "https://www.instagram.com/isepparis/"; // Remplacez "nouvelle_page.html" par le chemin de la nouvelle page
+        });
+      </script>
+      <button class="image-button" id="myButton3">
+        <img class='tee' src="FaceB.png" alt="Page_Facebook" width="30" height="23">
+      </button>
+      <script>
+        document.getElementById("myButton3").addEventListener("click", function() {
+            window.location.href = "https://fr-fr.facebook.com/ISEP.Paris/"; // Remplacez "nouvelle_page.html" par le chemin de la nouvelle page
+        });
+      </script>
+    </div>
+  </footer>
+  
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,221 @@
+    .conteneur a {
+    color: #000; /* Couleur du texte pour les liens */
+    text-decoration: none; /* Retirer le soulignement des liens */
+    width: 100%;
+    }
+    .connexion {
+        background-color: rgb(241, 22, 234);
+        color: rgb(0, 0, 0);
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    /*header {
+        padding-top: 30px; Ajouter un padding seulement en haut de l'en-tete
+    }*/
+    #myButton {
+        background-color: rgb(12, 26, 87);
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .go_up{
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        background-color: #ffffff;
+        color: black;
+        padding: 10px 20px;
+        font-size: 16px;
+        display: inline-block; /* Permet de centrer verticalement */
+    }
+    .div-banniere{
+        width: 100%;
+    }
+    .conteneur {
+        display: flex;
+    } 
+    .partie {
+        flex: 2; /* Chaque partie prend autant d'espace que possible */
+        border:#ffffff00; /* Ajoutez une bordure pour visualiser les limites des parties */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #number {
+        padding-top: 30px;
+    }
+    .align {
+        margin-top: 20px;
+    }
+    .partie1 {
+        flex: 0.5; /* Chaque partie prend autant d'espace que possible */
+        border:#ffffff00; /* Ajoutez une bordure pour visualiser les limites des parties */
+        /* padding-top: 15px; */
+    }
+    .partie2 {
+        flex: 1.7; /* Chaque partie prend autant d'espace que possible */
+        border: 1px solid rgb(255, 255, 255); /* Ajoutez une bordure pour visualiser les limites des parties */
+        padding-top: 30px;
+    }
+    .partie2 a {
+        margin-right: 15px; /* Ajoute un espace à droite de chaque lien, ajustez selon vos préférences */
+    }
+    .partie4 {
+        padding-top: 15px;
+        flex: 0.6;
+    }
+    .partie3 {
+        flex: 0.365; /* Chaque partie prend autant d'espace que possible */
+        border: 1px solid rgb(255, 255, 255); /* Ajoutez une bordure pour visualiser les limites des parties */
+        padding-top: 15px;
+    }
+    .petit_decalage{
+        padding-bottom: 0.7px;
+    }  
+    #bg {
+        background-image: url('bg_about.png'); /* Remplacez 'chemin/vers/votre/image.jpg' par le chemin réel de votre image */
+        background-size: cover; /* Ajuste la taille de l'image pour couvrir toute la zone */
+        background-position: center; /* Centre l'image horizontalement et verticalement */
+        background-repeat: no-repeat; /* Empêche la répétition de l'image de fond */
+        padding: 50px; /* Ajoute un espace intérieur pour vos contenus */
+    }
+    p {
+        padding-top: 15px; /* Ajouter un padding seulement en haut de l'en-tete */
+    }
+    footer {
+        background-image: url('bg_footer.png'); /* Remplacez 'chemin/vers/votre/image.jpg' par le chemin réel de votre image */
+        background-size: cover; /* Ajuste la taille de l'image pour couvrir toute la zone */
+        background-position: center; /* Centre l'image horizontalement et verticalement */
+        background-repeat: no-repeat; /* Empêche la répétition de l'image de fond */
+        padding: 50px; /* Ajoute un espace intérieur pour vos contenus */
+    }
+    .footer {
+        text-align: center; /* Centre le contenu horizontalement */
+        padding: 20px; /* Ajoute un espace intérieur pour plus de visibilité */
+    }
+    .image-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .tee {
+        width: 100%; /* Assurez-vous que l'image remplit le bouton */
+    }
+    .instagram-button {
+        margin-left: 1.7px; /* Ajustez la valeur de la marge selon vos besoins */
+    }
+    .envoyer-bouton {
+        border: none; /* Supprime la bordure du bouton */
+        cursor: pointer; /* Curseur pointeur au survol */
+        text-decoration: none;
+        background-color: white; /* Couleur de fond du bouton */
+        color: rgb(12, 26, 87); /* Couleur du texte du bouton */
+        padding: 10px 20px; /* Espacement interne du bouton */
+        font-size: 16px; /* Taille du texte du bouton */
+        display: inline-block; /* Permet de centrer verticalement */
+        font-family: Raleway, sans-serif;
+    }
+    .envoyer-bouton img {
+        margin-left: 5px; /* Espacement à gauche de l'icône */
+        vertical-align: middle; /* Alignement vertical avec le texte */
+    }
+    input[type="text"] {
+        /* Styles spécifiques pour les balises <input> de type texte */
+        width: 200px;
+        height: 30px;
+        border: 1px solid #ccc;
+        /* Ajoutez d'autres styles selon vos besoins */
+        margin-bottom: 10px;
+    } 
+    .z {
+        padding-left: 30px;
+        padding-top: 70px;
+    }
+    .x {
+        padding-left: 50px;
+        padding-right: 30px;
+    }  
+    .y {
+        padding-left: 90px;
+        padding-right: 35px;
+    }  
+    .search-box{ 
+        flex: 1;
+        position: relative;
+    }
+    .search-box input{ 
+        width: 90%; 
+        height: 40px; 
+        border: none; 
+        outline: none; 
+        background: #f2f2f2;
+        border-radius: 30px; 
+        color: gray; 
+        font-size: 16px; 
+        text-align: center;
+    }
+    .search-box button{ cursor: pointer;
+        width: 40px; height: 40px; border-radius: 30px;
+        border: none;
+        position: absolute;
+        top: 0; 
+        right: 15px;
+        transform: scale(0.9);
+        background: rgb(241, 22, 234);
+    }
+    #myBouton {
+        position: absolute;
+        top: 174%;
+        left: 11%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(12, 26, 87);
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .partie5 {
+        flex: 0.55; /* Chaque partie prend autant d'espace que possible */
+        border: 1px solid rgb(255, 255, 255); /* Ajoutez une bordure pour visualiser les limites des parties */
+        padding-top: 15px;
+    }
+    .lil-dec {
+        margin-left: 30px;
+    }
+    .conteneurs{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+    .part {
+        flex: 1;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #f5f5f5;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 10px;
+        text-align: center;
+    }
+    #about {
+        text-align: center;
+        padding: 40px 0;
+    }
+    .lottie-container {
+        margin: 20px 0;
+    }
+    .description {
+        padding: 20px;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: left;
+    }

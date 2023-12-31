@@ -21,13 +21,13 @@
 <body>
     <div class="message-container">
         <?php
-        echo "Votre profil a bien été créé !";
+        echo "Votre message a été réceptionné !";
         ?>
     </div>
 </body>
 <script>
     setTimeout(function() {
-        window.location.href = "login.php";
+        window.location.href = "acceuil.html";
     }, 3000);
 </script>
 

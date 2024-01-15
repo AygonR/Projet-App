@@ -1,3 +1,19 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Outsound";
+
+// Créer une connexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérifier la connexion
+//if ($conn->connect_error) {
+//    die("Connection failed: " . $conn->connect_error);
+//} else {
+//    echo "Connection successful!";
+//}  
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,51 +21,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style_faq.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-        <style>
-            body,h1,h2,h3,h4,p {font-family: "Raleway", sans-serif}
-        </style>
+    <style>
+        body,h1,h2,h3,h4,p,#myButton, .connexion {font-family: "Raleway", sans-serif}
+    </style>
     <title>Sonomorphia | Q&A and recurring questions</title>
 </head>
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "outsound";
-// Créer une connexion
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-//Vérifier la connexion
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
- echo "Connected successfully";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $question = $_POST['question_posee'];
-
-    // Préparer et lier
-    $stmt = $conn->prepare("INSERT INTO formulaire (question) VALUES (?)");
-    $stmt->bind_param("s", $question);
-
-    // Exécuter
-    if ($stmt->execute() === TRUE) {
-      echo "Question submitted successfully";
-  } else {
-      echo "Error: ". $stmt->error;
-  }
-    $stmt->close();
-    $conn->close();
-}
-?>
 <body>
-    <h1>
-        <a href ="https://www.amazon.fr/Nouveau-Apple-AirPods-Max-Gris-sid%C3%A9ral/dp/B08Q2CYLTQ/ref=sr_1_10?keywords=apple%2Bairpods&qid=1702369157&sr=8-10&th=1">
-            <img src = "logo_sonomorphia.png"  class="header-image" >
-        </a>
-        <a href="Register.html" class="page_de_connexion">Connexion</a>
-        <a href="page_faq.php" class="langue_page">Français</a>
-    </h1>
-    <h2>Do you have a question ? Welcome on our <span class="highlight">Q&A</span> !</h1>
+<header>
+        <div class = "conteneur" id="home">
+            <div class="partie1">
+                <a href="accueil.html">
+                <img src="logo_sonomorphia.png" alt="logo" class="logo-image" width="370" height="70">
+                </a>
+            </div>
+            <div class="partie3">                                                                                                                         
+                <button class="connexion"><a href="Login.html">Log in</a></button>
+                <button class="connexion"><a href="Register.html">Sign in</a></button>
+            </div>
+        </div>
+    </header>
+    <h2>Do you have a question ? Welcome on our Q&A ! </h1><!--<span class="highlight"> </span>-->
     <div class="container-faq">
         <div class="questions">
             <div class="visible-pannel">
@@ -83,17 +74,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
     <div class = "interaction">
-        <p>You've got another question than the ones above ? Ask us directly right below :</p>
+        <p>You've got another question than the ones above ?</p>
         <div class="input-container">
-            <form method="POST" id="monFormulaire" name ="question_posee" action="traitement_question.php" >
-                <input type="text" id="monTxt" placeholder="Write your question">
+            <form action="q_posee.php" method="post" id="formu" name ="q_posee">
+                <label for="query">Enter your question :</label>
+                <input type="text" id="query" placeholder='Write your question' name="query" required>
                 <input type="submit" value="Envoyer">
             </form>
         </div>
-    <div id="message">We've received your question, you'll get your answer as soon as possible !</datagrid></div>
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
-    <script src="script_faq.js"></script>
+        <div id="message">We've received your question, you'll get your answer as soon as possible !</datagrid>
+        </div>
+    </div>
+    <div class="emoji-bar">
+        <button class="image-button" id="myButton1">
+            <img class='tee' src="image_uni\LinkIn.png" alt="Page_LinkedIn" width="30" height="23">
+        </button>
+        <button class="image-button instagram-button" id="myButton2">
+            <img class='tee' src="image_uni\Insta.png" alt="Page_Insta" width="30" height="23">
+        </button>
+        <button class="image-button" id="myButton3">
+            <img class='tee' src="image_uni\FaceB.png" alt="Page_Facebook" width="30" height="23">
+        </button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+<script src="script_faq.js"></script>
 </html>

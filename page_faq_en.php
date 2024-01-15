@@ -87,13 +87,13 @@ $conn = new mysqli($servername, $username, $password, $dbname);
     </div>
     <div class="emoji-bar">
         <button class="image-button" id="myButton1">
-            <img class='tee' src="image_uni\LinkIn.png" alt="Page_LinkedIn" width="30" height="23">
+            <img class='tee' src="LinkIn.png" alt="Page_LinkedIn" width="30" height="23">
         </button>
         <button class="image-button instagram-button" id="myButton2">
-            <img class='tee' src="image_uni\Insta.png" alt="Page_Insta" width="30" height="23">
+            <img class='tee' src="Insta.png" alt="Page_Insta" width="30" height="23">
         </button>
         <button class="image-button" id="myButton3">
-            <img class='tee' src="image_uni\FaceB.png" alt="Page_Facebook" width="30" height="23">
+            <img class='tee' src="FaceB.png" alt="Page_Facebook" width="30" height="23">
         </button>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

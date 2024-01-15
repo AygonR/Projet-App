@@ -1,10 +1,14 @@
-*, ::before, ::after{
+ *, ::before, ::after{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-.langue_page {
+header {
+    background-color: rgba(255, 255, 255, 0.4); /* Change this to your preferred color */
+    width: 100%;
+}
+/*
+.langue_page, .page_de_connexion {
     float: right;
     padding: 10px 20px;
     font-size: 20px;
@@ -16,30 +20,12 @@
     margin-top: 40px;
     border: rgba(135, 209, 250,0.75) 2px solid;
 }
-.page_de_connexion {
-    float: right;
-    padding: 10px 20px;
-    font-size: 20px;
-    color: white;
-    background-color: rgba(135, 209, 250);
-    text-decoration: none;
-    border-radius: 5px;
-    margin-right: 80px;
-    margin-top: 40px;
-    border: rgba(135, 209, 250,0.75) 2px solid;
-}
-
 
 .highlight {
-    color: rgba(250, 119, 253,0.5); /* Remplacez "red" par la couleur de votre choix */
+    color: rgba(250, 119, 253,0.5); 
     font-weight: bold;
 }
-
-.header-image {
-    max-width: 2500px;
-    max-height: 100px;
-}
-
+*/
 h1{
     text-align: left;
 }
@@ -49,6 +35,7 @@ h2{
     font-size: 39.5px;
     color: rgba(0, 0, 0, 0.8);
     font-weight: bold;
+    margin-top: 50px;
 }
 
 body {
@@ -67,13 +54,14 @@ body {
     flex-direction: column ;
     justify-content: center;
     align-items: flex-start;
+    
 }
-
 .questions{
     width: 100%;
     height: auto;
     margin: 5px;
     color: black;
+    
 }
 
 .visible-pannel{
@@ -95,6 +83,7 @@ body {
     margin-right: 10px;
     width: 25px;
     cursor: pointer;
+    
 }
 
 .toggle-pannel {
@@ -103,6 +92,7 @@ body {
     opacity: 0;
     background: linear-gradient(to right, rgba(238, 145, 240, 0.25), rgba(100, 194, 245, 0.25));
     border-radius: 10px;
+    
 }
 
 .toggle-pannel h4 {
@@ -159,6 +149,7 @@ input[type="text"] {
     text-align: left;
     line-height: 1.5;
     padding : 15px 15px;
+    margin-bottom : 150px;
 }
 input[type="submit"] {
     background-color: #111052; 
@@ -170,7 +161,7 @@ input[type="submit"] {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer; 
-    border-radius: 5px; 
+    border-radius: 10px; 
 }
 
 @keyframes slideIn {
@@ -194,3 +185,158 @@ input[type="submit"] {
 .banner {
     animation: slideIn 1s forwards;
 }
+
+
+
+
+
+.conteneur a {
+    color: #000; /* Couleur du texte pour les liens */
+    text-decoration: none; /* Retirer le soulignement des liens */
+    width: 100%;
+}
+.conteneur {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    text-align: center;
+} 
+.connexion a {
+    color: #ffffff; /* This will override the color inherited from .conteneur a */
+}
+.connexion {
+    background-color: #111052;
+    padding: 10px 15px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.connexion button {
+    margin-right: 10px;
+}
+#myButton {
+    background-color: rgb(12, 26, 87);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.div-banniere{
+    width: 100%;
+}
+.partie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#number {
+    padding-top: 30px;
+}
+.align {
+    margin-top: 20px;
+}
+.partie1 {
+    width: auto;
+    pointer-events: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    /*margin-right: auto;  add this line */
+    flex-grow: 1; /* add this line */
+    text-align: center;
+    /* remove justify-content: center; and align-items: center; */
+}
+.partie1 img {
+    pointer-events: auto;
+    width: auto;
+}
+.partie3 {
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    display: flex;
+    margin-left : auto;
+    margin-right : 25px;
+    position: absolute;
+    right: 0;
+}
+.image-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+}
+.tee {
+    width: 100%; 
+}
+.instagram-button {
+    margin-left: 1.7px; 
+}
+#myBouton {
+    position: absolute;
+    top: 174%;
+    left: 11%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(12, 26, 87);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.lil-dec {
+    margin-left: 30px;
+}
+#about {
+    text-align: center;
+    padding: 40px 0;
+}
+.emoji-bar {
+    /*position: fixed;*/
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+}
+.emoji-bar img {
+    width: 30px; /* Adjust as needed */
+    height: auto; /* This will maintain the aspect ratio */
+    margin-right: 10px;
+    margin-bottom:10px ;
+}
+.partie1 {
+    display: flex;
+    justify-content: center;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.menu-button {
+    position: absolute;
+    left: 0;
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/*margin: 10px auto 5px;
+display: flex;
+flex-direction: column;  Change to column for vertical layout 
+align-items: flex-start;
+margin-top : 40px;
+padding : 15px 15px;*/

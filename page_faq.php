@@ -1,3 +1,19 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Outsound";
+
+// Créer une connexion
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérifier la connexion
+//if ($conn->connect_error) {
+//    die("Connection failed: " . $conn->connect_error);
+//} else {
+//    echo "Connection successful!";
+//}  
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,25 +21,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style_faq.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-        <style>
-            body,h1,h2,h3,h4,p {font-family: "Raleway", sans-serif}
-        </style>
+    <style>
+        body,h1,h2,h3,h4,p,#myButton, .connexion {font-family: "Raleway", sans-serif}
+    </style>
     <title>Sonomorphia | FAQ et Questions Récurrentes </title>
 </head>
-
 <body>
-    <h1>
-        <a href ="https://www.amazon.fr/Nouveau-Apple-AirPods-Max-Gris-sid%C3%A9ral/dp/B08Q2CYLTQ/ref=sr_1_10?keywords=apple%2Bairpods&qid=1702369157&sr=8-10&th=1">
-            <img src = "logo_sonomorphia.png"  class="header-image" >
-        </a>
-        <a href="Register.html" class="page_de_connexion">Connexion</a>
-        <a href="page_faq_en.php" class="langue_page">English</a>
-    </h1>
-    <h2>Vous avez des questions ? Bienvenue sur la <span class="highlight">FAQ</span> !</h1>
+    <header>
+        <div class = "conteneur" id="home">
+            <div class="partie1">
+                <a href="accueil.html">
+                <img src="logo_sonomorphia.png" alt="logo" class="logo-image" width="370" height="70">
+                </a>
+            </div>
+            <div class="partie3">                                                                                                                         
+                <button class="connexion"><a href="Login.html">Log in</a></button>
+                <button class="connexion"><a href="Register.html">Sign in</a></button>
+            </div>
+        </div>
+    </header>
+    <h2>Vous avez des questions ? Bienvenue sur la FAQ !</h2><!--<span class="highlight"> </span>-->
     <div class="container-faq">
         <div class="questions">
             <div class="visible-pannel">
-                <h3>Quelle est l'autonomie moyenne d'OutSound ?</h2>
+                <h3>Quelle est l'autonomie moyenne d'OutSound ?</h3>
                 <img src="croix.png" alt="croix animation">
             </div>
             <div class="toggle-pannel">
@@ -52,24 +73,34 @@
             </div>
         </div>
     </div>
-    <div class = "interaction">
-        <p>Vous avez une question autre que celles ci-desssus ? Posez-la nous ici :</p>
+    <div class="interaction">
+        <p>Vous avez une question autre que celles ci-desssus ?</p>
         <div class="input-container">
-            <form action ="question_posee" method="post">
+            <form action="q_posee.php" method="post" id="formu" name ="q_posee">
                 <label for="query">Saisissez votre question :</label>
-                <input type="text" id="query" name="query" required>
-
+                <input type="text" id="query" placeholder='Entrez votre question' name="query" required>
                 <input type="submit" value="Envoyer">
             </form>
         </div>
-    <div id="message">Nous avons bien reçu votre question, vous recevrez une réponse dans les plus brefs délais !</datagrid></div>
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
-    <script src="script_faq.js"></script>
+        <div id="message">Nous avons bien reçu votre question, vous recevrez une réponse dans les plus brefs délais !</datagrid>
+        </div>
+    </div>
+    <div class="emoji-bar">
+        <button class="image-button" id="myButton1">
+            <img class='tee' src="image_uni\LinkIn.png" alt="Page_LinkedIn" width="30" height="23">
+        </button>
+        <button class="image-button instagram-button" id="myButton2">
+            <img class='tee' src="image_uni\Insta.png" alt="Page_Insta" width="30" height="23">
+        </button>
+        <button class="image-button" id="myButton3">
+            <img class='tee' src="image_uni\FaceB.png" alt="Page_Facebook" width="30" height="23">
+        </button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+<script src="script_faq.js"></script>
 </html>
-
 
 
 

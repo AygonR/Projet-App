@@ -4,22 +4,18 @@
 }
 
 .header {
-    text-align: right;
+    display: flex; /* Active flexbox */
+    justify-content: flex-end; /* Alignez les enfants à droite */
+    align-items: center; /* Centre les enfants verticalement */
     padding: 10px;
-   
     position: relative;
+    width: 100%; /* Assurez-vous que le header prend toute la largeur */
 }
 
-#cart-link {
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: top;
-}
-
-#cart-icon {
-    width: 30px;
-    height: 30px;
-    vertical-align: top;
+#cart-link, #cart-icon {
+    vertical-align: top; /* Ce style pourrait ne plus être nécessaire avec flexbox */
+    display: block; /* Changez en block si vous voulez que l'image prenne tout l'espace de son conteneur */
+    margin-right: 0; /* Ajustez ou supprimez la marge droite */
 }
 
 .products-container {
@@ -45,15 +41,15 @@
     margin: 0 auto;
 }
 .add-to-cart {
-    background-color: #4CAF50;
-    color: white;
+    background-color: white; /* Fond blanc pour le bouton */
+    color: #333;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 .add-to-cart:hover {
-    background-color: #45a049;
+    background-color: #f2f2f2;
 }
 
 .identification {
@@ -85,11 +81,10 @@
 
 
 .identification, .cart {
-    position: relative;
-    display: inline-block;
-    margin-right: 20px; /* Espace entre les éléments */
+    display: flex; /* Utilisez également flexbox ici pour un alignement cohérent */
+    align-items: center; /* Centre verticalement les images dans leurs divs */
+    margin-right: 20px; /* Espace entre l'identification et le panier */
 }
-
 
 
 .identification:hover .tooltip, .cart:hover .tooltip {
@@ -101,7 +96,7 @@
 body {
 	
     font-family: Arial, sans-serif;
-    background-image: url('background.jpg');
+    background-image: url('fond.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     margin: 0;
@@ -110,4 +105,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.identification img, .cart img {
+    width: 30px; /* Ajustez la largeur comme nécessaire */
+    height: 30px; /* Assurez-vous que la hauteur est la même pour les deux images */
+    border-radius: 10px; /* Coins arrondis pour les images */
 }

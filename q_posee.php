@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }    
 
 // Récupérer les valeurs du formulaire
-$query = $_POST['query'];
+$query = htmlspecialchars($_POST['query']);
 
 if (isset($query)) {
     echo "<script type='text/javascript'>alert('$_POST[query] a été créé');</script>";

@@ -125,6 +125,18 @@ input[type="text"] {
     margin-right: 10px; /* Ajout d'une marge à droite pour espacer le bouton */
     width : 725px;
 }
+input[type="email"] {
+    padding: 12px 20px; /* Espace intérieur */
+    margin: 8px 0; /* Marge extérieure */
+    box-sizing: border-box; /* Pour que padding et border ne modifient pas la largeur totale */
+    border: 2px solid #ccc; /* Bordure */
+    border-radius: 10px; /* Coins arrondis */
+    background-color: #f8f8f8; /* Couleur de fond */
+    font-size: 16px; /* Taille de texte */
+    /*flex-grow: 0.5; /* Prendre tout l'espace disponible */
+    margin-right: 10px; /* Ajout d'une marge à droite pour espacer le bouton */
+    width : 725px;
+}
 
 .input-container {
     display: flex;
@@ -149,7 +161,7 @@ input[type="text"] {
     text-align: left;
     line-height: 1.5;
     padding : 15px 15px;
-    margin-bottom : 150px;
+    margin-bottom : 125px;
 }
 input[type="submit"] {
     background-color: #111052; 
@@ -194,6 +206,7 @@ input[type="submit"] {
     color: #000; /* Couleur du texte pour les liens */
     text-decoration: none; /* Retirer le soulignement des liens */
     width: 100%;
+    height: 100%;
 }
 .conteneur {
     display: flex;
@@ -213,10 +226,13 @@ input[type="submit"] {
     text-decoration: none;
     border-radius: 10px;
     margin-right: 15px;
+    margin-top: 5px;
 }
 
 .connexion button {
     margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 #myButton {
     background-color: rgb(12, 26, 87);
@@ -263,6 +279,7 @@ input[type="submit"] {
     margin-right : 25px;
     position: absolute;
     right: 0;
+    align-items: center;
 }
 .image-button {
     background-color: transparent;
@@ -314,24 +331,19 @@ input[type="submit"] {
     display: flex;
     justify-content: center;
 }
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
 .menu-button {
     position: absolute;
     left: 0;
 }
-.logo-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+.logo-lg {
+    padding: 10px 15px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-right: 15px;
+    margin-top: 5px;
 }
 
 /*margin: 10px auto 5px;

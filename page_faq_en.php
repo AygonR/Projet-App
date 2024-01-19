@@ -37,6 +37,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <div class="partie3">                                                                                                                         
                 <button class="connexion"><a href="Login.html">Log in</a></button>
                 <button class="connexion"><a href="Register.html">Sign in</a></button>
+                <button alt="FR" class="connexion"><a href="page_faq.php">FR</a></button>
             </div>
         </div>
     </header>
@@ -79,7 +80,11 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <form action="q_posee.php" method="post" id="formu" name ="q_posee">
                 <label for="query">Enter your question :</label>
                 <input type="text" id="query" placeholder='Write your question' name="query" required>
-                <input type="submit" value="Envoyer">
+                <br>
+                <label for="email">Your mail adress :</label>
+                <input type="email" id="email" placeholder='Email here' name="email" required>
+                <input type="submit" value="Submit">
+            </form>
             </form>
         </div>
         <div id="message">We've received your question, you'll get your answer as soon as possible !</datagrid>

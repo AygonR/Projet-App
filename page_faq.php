@@ -35,8 +35,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 </a>
             </div>
             <div class="partie3">                                                                                                                         
-                <button class="connexion"><a href="Login.html">Log in</a></button>
-                <button class="connexion"><a href="Register.html">Sign in</a></button>
+                <button class="connexion"><a href="Login.html">Connexion</a></button>
+                <button class="connexion"><a href="Register.html">S'inscrire</a></button>
+                <button alt="EN" class="connexion"><a href="page_faq_en.php">ENG</a></button>
             </div>
         </div>
     </header>
@@ -79,6 +80,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <form action="q_posee.php" method="post" id="formu" name ="q_posee">
                 <label for="query">Saisissez votre question :</label>
                 <input type="text" id="query" placeholder='Entrez votre question' name="query" required>
+                <br>
+                <label for="email">Votre adresse email :</label>
+                <input type="email" id="email" placeholder='Entrez votre email' name="email" required>
                 <input type="submit" value="Envoyer">
             </form>
         </div>
@@ -101,6 +105,4 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
 <script src="script_faq.js"></script>
 </html>
-
-
 

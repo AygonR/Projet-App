@@ -105,4 +105,3 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
 <script src="script_faq.js"></script>
 </html>
-

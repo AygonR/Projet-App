@@ -28,33 +28,34 @@ if (isset($query)) {
     echo "<script type='text/javascript'>alert('$_POST[query] a été créé');</script>";
 }
 
-$stmt = $conn->prepare("INSERT INTO formulaire (question) values(?)");
-$stmt->bind_param("s", $query);
+$stmt = $conn->prepare("INSERT INTO formulaire (question, mail_user) values(?, ?)");
+$stmt->bind_param("ss", $query, $email);
 $execval = $stmt->execute();
 
 if ($execval) {
     echo "Question enregistrée...";
     // Send email
     $mail = new PHPMailer(true);
+    $mail->CharSet = 'UTF-8';
+    $mail->Username = 'hellosonomorphia@outlook.com';                 // SMTP username
+    $mail->Password = 'Adminsonosound';                           // SMTP password
     try {
         //Server settings
         $mail->SMTPDebug = 2;                                 
         $mail->isSMTP();                                      
-        $mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
+        $mail->Host = 'smtp.outlook.com';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               
-        $mail->Username = 'user@example.com';                 // SMTP username
-        $mail->Password = 'secret';                           // SMTP password
         $mail->SMTPSecure = 'tls';                            
         $mail->Port = 587; 
 
         //Recipients
-        $mail->setFrom($email, 'Mailer');
-        $mail->addAddress($sono, 'Joe User');     // Add a recipient
+        $mail->setFrom('hellosonomorphia@outlook.com', 'Sonomorphia');
+        $mail->addAddress($email);     // Add a recipient
 
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML
-        $mail->Subject = 'Confirmation de la question';
-        $mail->Body    = 'Une question a été enregistrée : ' . $query;
+        $mail->Subject = 'Contact - Sonomorphia';
+        $mail->Body = 'Nous avons bien reçu votre message !</br>Pour rappel, vous nous avez envoyé : ' . $query . '</br>Nous vous répondrons dans les plus brefs délais !</br>L\'équipe Sonomorphia';
 
         $mail->send();
         echo 'Message has been sent';
@@ -70,11 +71,4 @@ $stmt->close();
 $conn->close();
 
 ?>
-
-
-
-
-
-
-
 

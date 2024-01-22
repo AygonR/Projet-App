@@ -18,13 +18,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sonomorphia`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contacting`
 --
 
 CREATE TABLE `contacting` (
@@ -39,16 +37,6 @@ CREATE TABLE `contacting` (
 -- Dumping data for table `contacting`
 --
 
-INSERT INTO `contacting` (`firstname`, `lastname`, `email`, `subject`, `message`) VALUES
-('Test', 'Test', 'test@test.com', 'Test', 'Je fais un test.'),
-('Bon', 'Bon', 'Bon@bon.com', 'Alors', 'Testons.'),
-('Lisa', 'Test', 'lisa@testing.com', 'ok', 'dssdg'),
-('pddvs', 'mdsjv', 'lisa@lisa.com', 'cjwdff', 'hello :)'),
-('dfgdfd', 'fvgwgvfwv', 'lisabb@sdffg.com', 'sddf', 'coucou :)'),
-('dssfg', 'dfgfb', 'dfd', 'fdf', 'ok'),
-('fdffv', 'bfgbgb', 'fefrferfrfr', 'dfzrfh', 'fdsd'),
-('fdffv', 'bfgbgb', 'fefrferfrfr', 'dfzrfh', 'fdsd'),
-('fdf', 'dffv', 'fvf', 'vfdv', 'vfv');
 
 -- --------------------------------------------------------
 
@@ -56,20 +44,15 @@ INSERT INTO `contacting` (`firstname`, `lastname`, `email`, `subject`, `message`
 -- Table structure for table `question`
 --
 
-CREATE TABLE `question` (
-  `query` text NOT NULL
+CREATE TABLE `formulaire` (
+  `IdQuestion` int AUTO_INCREMENT PRIMARY KEY,
+  `question` varchar(500),
+  `mail_user` varchar(500)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `question`
---
 
-INSERT INTO `question` (`query`) VALUES
-('Je pose une question...'),
-('Re-test'),
-('Je pose quelque chose là...'),
-('Je pose une question, eh oui encore...'),
-('Je pose une question, eh oui encore...');
 
 -- --------------------------------------------------------
 
@@ -93,15 +76,6 @@ CREATE TABLE `users_list` (
 --
 -- Dumping data for table `users_list`
 --
-
-INSERT INTO `users_list` (`id`, `username`, `firstname`, `lastname`, `adresse_livraison`, `date_naissance`, `email`, `numero_de_tel`, `password`, `image`) VALUES
-(15, 'ok', 'li', 'bou', 'allée de la république', '2024-01-11', 'ok@ok.com', '0632569800', '$2y$10$qx/UsRiEnUxlCLTAieuAlu5atyB8nKMZsoflXd8TlLnd2HVcw5h3W', ''),
-(16, 'polo', 'polo', 'boulo', 'allée maurice ravel', '2024-01-02', 'polo@polo.com', '0792384500', '$2y$10$9zRj8vbPOC1PlGGfX1Ss9.dcb.8jlCvDCmlIRiRSxbxnDgZyXUdSy', ''),
-(17, 'papa', 'papa', 'boubou', 'allée des champs', '2024-01-02', 'papa@papa.com', '0000', '$2y$10$L6r22LWQQUSvrnIFlo/6Rek40QIQPvzWkqGEv0QYtodQ2VgWTL2YW', ''),
-(18, '', '', '', '', '', '', '', '', ''),
-(19, 'yanis', 'yanis', 'polo', 'allée de la liberté', '2024-01-06', 'yanis@yanis.com', '05566543', '$2y$10$YYjJzbQVcajiefVakQDG8ecOA8IiBOcmp1lpJpEedpaeHbzz13I62', ''),
-(20, '', '', '', '', '', '', '', '', ''),
-(21, 'moi', 'moi', 'moi', 'moi', '2024-01-07', 'moi@moi.com', '07', '$2y$10$uU2fJQ0UFenD9p7rHGYWXOtPLDD6Y6WRgS0MTL/4GNXvadAGLJDg6', '');
 
 --
 -- Indexes for dumped tables

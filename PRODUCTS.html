@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ma Boutique en Ligne</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('fond.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        .header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 10px;
+
+            width: 100%;
+
+        }
+
+
+
+        .identification,
+        .cart {
+
+            display: flex;
+
+            align-items: center;
+
+            margin-right: 20px;
+
+        }
+
+
+
+        .identification img,
+        .cart img {
+
+            width: 30px;
+
+            height: 30px;
+
+            border-radius: 10px;
+
+        }
+
+
+
+        .tooltip {
+
+            visibility: hidden;
+
+            width: 120px;
+
+            color: black;
+
+            text-align: center;
+
+            border-radius: 6px;
+
+            padding: 5px 0;
+
+            position: absolute;
+
+            z-index: 1;
+
+            bottom: 100%;
+
+            left: 50%;
+
+            margin-left: -60px;
+
+            opacity: 0;
+
+            transition: opacity 0.3s;
+
+        }
+
+
+
+        .identification:hover .tooltip,
+
+        .cart:hover .tooltip {
+
+            visibility: visible;
+
+            opacity: 1;
+
+        }
+
+
+
+        #featureSelector {
+
+            display: flex;
+
+            margin-bottom: 20px;
+
+            justify-content: center;
+            /* Centre les éléments horizontalement */
+
+            align-items: center;
+            /* Centre les éléments verticalement */
+
+            font-weight: normal;
+            /* Désactive le style en gras */
+
+        }
+
+
+
+        .identification img,
+        .cart img {
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            width: 120px;
+            color: black;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .identification:hover .tooltip,
+        .cart:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        #featureSelector {
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: center;
+            align-items: center;
+            font-weight: normal;
+        }
+
+        .products-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: nowrap;
+        }
+
+        .product-container {
+            border: 1px solid #ddd;
+            padding: 15px;
+        }
+
+        #featureSelector input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+
+
+        .products-container {
+
+            display: flex;
+
+
+            /* Ajuste l'espacement entre les produits */
+
+            align-items: flex-start;
+
+
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+
+
+
+        .products-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            /* Permet le passage à la ligne des produits */
+        }
+
+        .product-container {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            flex-basis: calc(33.33% - 30px);
+            /* Calcul de la largeur pour trois produits côte à côte */
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            /* Ajout d'une marge en bas pour l'espacement */
+        }
+
+
+
+        .product-container img {
+
+            max-width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            margin: 0 auto;
+
+            max-height: 150px;
+            /* Réduire la hauteur maximale des images */
+
+        }
+
+
+
+        .add-to-cart {
+
+            background-color: white;
+
+            color: white;
+
+            padding: 10px 20px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+        }
+
+
+
+        .add-to-cart:hover {
+
+            background-color: #f2f2f2;
+
+        }
+
+
+
+
+
+        @media only screen and (max-width: 930px) {
+
+            .header {
+
+                flex-direction: column;
+                /* Change la direction de la flexbox en colonne */
+
+                align-items: flex-start;
+                /* Alignement à gauche pour les enfants */
+
+            }
+
+
+
+            .identification,
+            .cart {
+
+                margin-right: 0;
+                /* Supprime la marge entre l'identification et le panier */
+
+                margin-top: 10px;
+                /* Ajoute une marge en haut pour l'espacement */
+
+            }
+
+
+
+            .product-container {
+
+                flex-basis: 100%;
+                /* Pour passer en pleine largeur sur des écrans plus petits */
+
+            }
+
+
+
+            .product-container img {
+
+                max-height: 100px;
+                /* Réduit la hauteur maximale des images pour un meilleur ajustement */
+
+            }
+
+
+
+            #featureSelector {
+
+                flex-direction: row;
+                /* Change la direction de la flexbox en ligne */
+
+                align-items: center;
+                /* Alignement au centre pour les enfants */
+
+                flex-wrap: wrap;
+                /* Permet le passage à la ligne si l'espace est insuffisant */
+
+                font-weight: normal;
+                /* Définit le poids de la police sur normal pour que le texte ne soit pas en gras */
+
+            }
+
+
+
+            #featureSelector input[type="checkbox"] {
+
+                margin-right: 10px;
+                /* Ajoute une marge à droite pour l'espacement entre les cases à cocher */
+
+                margin-bottom: 10px;
+
+                /* Ajoute une marge en bas pour l'espacement entre les lignes */
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+
+    <div class="header">
+
+        <div class="identification">
+
+            <a href="login.html">
+
+                <img src="identification.png" alt="Cliquez pour vous identifier">
+
+            </a>
+
+        </div>
+
+        <div class="cart">
+
+            <a href="#" onclick="showCart()"><img src="picto_panier.jpg" alt="Panier" id="cart-icon"></a>
+
+            <span class="tooltip"></span>
+
+        </div>
+
+    </div>
+
+
+
+    <h1>Découvrez nos produits :</h1>
+
+
+
+    <label>Sélectionnez les fonctionnalités :</label>
+
+    <div id="featureSelector">
+        <input type="checkbox" id="clearSound" value="clearSound" onclick="filterProducts()">
+        <label for="clearSound"><span style="font-weight: normal;">Son clair et basses équilibrées</span></label>
+
+        <input type="checkbox" id="longBattery" value="longBattery" onclick="filterProducts()">
+        <label for="longBattery"><span style="font-weight: normal;">Autonomie exceptionnelle</span></label>
+
+        <input type="checkbox" id="fastCharge" value="fastCharge" onclick="filterProducts()">
+        <label for="fastCharge"><span style="font-weight: normal;">Charge rapide</span></label>
+
+        <input type="checkbox" id="noiseReduction" value="noiseReduction" onclick="filterProducts()">
+        <label for="noiseReduction"><span style="font-weight: normal;">Réduction active du bruit</span></label>
+
+        <input type="checkbox" id="compactDesign" value="compactDesign" onclick="filterProducts()">
+        <label for="compactDesign"><span style="font-weight: normal;">Design compact</span></label>
+
+        <input type="checkbox" id="ergonomicDesign" value="ergonomicDesign" onclick="filterProducts()">
+        <label for="ergonomicDesign"><span style="font-weight: normal;">Design ergonomique</span></label>
+
+        <input type="checkbox" id="highDefinitionSound" value="highDefinitionSound" onclick="filterProducts()">
+        <label for="highDefinitionSound"><span style="font-weight: normal;">Son haute définition</span></label>
+
+        <input type="checkbox" id="premiumDesign" value="premiumDesign" onclick="filterProducts()">
+        <label for="premiumDesign"><span style="font-weight: normal;">Design haut de gamme</span></label>
+
+        <input type="checkbox" id="optimalConnectivity" value="optimalConnectivity" onclick="filterProducts()">
+        <label for="optimalConnectivity"><span style="font-weight: normal;">Connectivité optimale</span></label>
+    </div>
+
+    <style>
+        .product-container {
+            display: inline-block;
+            width: 30%;
+            margin-right: 2%;
+            vertical-align: top;
+        }
+
+        .product-container:last-child {
+            margin-right: 0;
+        }
+
+        .product-container-wrapper {
+            text-align: center;
+        }
+    </style>
+
+    <div class="product-container" id="product1">
+
+        <h2>Produit 1: AirSound 1.0</h2>
+
+        <img src="produit1.png" alt="Produit 1">
+
+        <p>Les écouteurs AirSound 1.0 offrent une expérience audio sans fil de base avec un son clair et des basses
+            équilibrées. Leur design simple et compact les rend parfaits pour un usage quotidien. Dotés d'une autonomie
+            de 12 heures et d'une charge rapide, ces écouteurs sont un choix fiable pour les utilisateurs à la recherche
+            d'une solution abordable et fonctionnelle.</p>
+
+        <ul class="product-features">
+
+            <li data-feature="clearSound">Son clair et basses équilibrées</li>
+
+            <li data-feature="longBattery">Autonomie de 12 heures</li>
+
+            <li data-feature="fastCharge">Charge rapide</li>
+
+            <li data-feature="compactDesign">Design compact</li>
+
+        </ul>
+
+        <p>Prix: 120€</p>
+
+        <button class="add-to-cart" onclick="addToCart('AirSound 1.0', 120)" style="background-color: #DA7DDA;">Ajouter
+            dans le panier</button>
+
+    </div>
+
+
+
+    <div class="product-container" id="product2">
+
+        <h2>Produit 2: AirSound FE</h2>
+
+        <img src="produit2.png" alt="Produit 2">
+
+        <p>Les AirSound FE sont des écouteurs sans fil qui élèvent votre expérience auditive. Avec une batterie de 18
+            heures, la fonction de charge rapide, et une protection anti-bruit de base, ces écouteurs offrent un
+            équilibre entre performance et coût. Leur design ergonomique garantit un ajustement confortable pour une
+            utilisation prolongée.</p>
+
+        <ul class="product-features">
+
+            <li data-feature="highDefinitionSound">Qualité audio améliorée</li>
+
+            <li data-feature="longBattery">Autonomie de 18 heures</li>
+
+            <li data-feature="fastCharge">Charge rapide</li>
+
+            <li data-feature="noiseReduction">Protection anti-bruit de base</li>
+
+            <li data-feature="ergonomicDesign">Design ergonomique</li>
+
+        </ul>
+
+        <p>Prix: 155€</p>
+
+        <button class="add-to-cart" onclick="addToCart('Airsound FE', 155)" style="background-color: #DA7DDA;">Ajouter
+            dans le panier</button>
+
+    </div>
+
+
+
+    <div class="product-container" id="product3">
+
+        <h2>Produit 3: OutBuds Pro</h2>
+
+        <img src="produit3.png" alt="Produit 3">
+
+        <p>Les OutBuds Pro redéfinissent l'expérience des écouteurs sans fil avec des fonctionnalités avancées. Profitez
+            d'un son haute définition, d'une batterie exceptionnelle de 24 heures, et d'une technologie de réduction
+            active du bruit pour une immersion totale. Ces écouteurs sont conçus pour les audiophiles exigeants et
+            offrent une connectivité optimale avec une portée étendue.</p>
+
+        <ul class="product-features">
+
+            <li data-feature="highDefinitionSound">Son haute définition</li>
+
+            <li data-feature="longBattery">Autonomie exceptionnelle de 24 heures</li>
+
+            <li data-feature="fastCharge">Charge rapide avancée</li>
+
+            <li data-feature="noiseReduction">Réduction active du bruit</li>
+
+            <li data-feature="premiumDesign">Design haut de gamme</li>
+
+            <li data-feature="optimalConnectivity">Connectivité optimale</li>
+
+        </ul>
+
+        <p>Prix: 200€</p>
+
+        <button class="add-to-cart" onclick="addToCart('OutBuds Pro', 200)" style="background-color: #DA7DDA;">Ajouter
+            dans le panier</button>
+
+    </div>
+
+
+
+    <script>
+
+        function filterProducts() {
+
+            var selectedFeatures = Array.from(document.querySelectorAll("#featureSelector input:checked"))
+
+                .map(checkbox => checkbox.value);
+
+
+
+            var productContainers = document.getElementsByClassName("product-container");
+
+
+
+            for (var i = 0; i < productContainers.length; i++) {
+
+                var product = productContainers[i];
+
+                var featuresList = product.getElementsByTagName("li");
+
+
+
+                var hasSelectedFeature = false;
+
+
+
+                for (var j = 0; j < featuresList.length; j++) {
+
+                    var feature = featuresList[j].getAttribute("data-feature");
+
+
+
+                    if (selectedFeatures.includes(feature)) {
+
+                        hasSelectedFeature = true;
+
+                        break;
+
+                    }
+
+                }
+
+
+
+                // Si aucune fonctionnalité n'est sélectionnée, affiche tous les produits
+
+                if (selectedFeatures.length === 0) {
+
+                    hasSelectedFeature = true;
+
+                }
+
+
+
+                if (hasSelectedFeature) {
+
+                    product.style.display = "block";
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            }
+
+        }
+
+
+
+
+
+        function addToCart(productName, price) {
+
+            alert("Ajouté au panier : " + productName + " - Prix : " + price + "€");
+
+        }
+
+    </script>
+
+</body>
+
+
+
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+        background-color: rgb(255, 255, 255);
+        color: white;
+    }
+
+    .header img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    label {
+        font-weight: bold;
+        margin-top: 20px;
+        display: block;
+    }
+
+    #featureSelector {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+
+    #featureSelector input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+
+    .product-container {
+        border: 1px solid #ddd;
+        padding: 15px;
+        text-align: center;
+        flex-basis: calc(33.33% - 30px);
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        transition: transform 0.3s;
+        display: inline-block;
+        /* Ajout de cette ligne */
+    }
+
+    .product-container:hover {
+        transform: scale(1.05);
+    }
+
+    .product-container img {
+        max-width: 100%;
+        height: auto;
+        display: flex;
+        margin: 0 auto;
+        max-height: 150px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Ajout de cette classe */
+    .product-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    ici .add-to-cart {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .add-to-cart:hover {
+        background-color: #555;
+    }
+
+    .tooltip {
+        background-color: #333;
+        color: white;
+        padding: 5px 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        border-radius: 5px;
+    }
+
+    .identification:hover .tooltip,
+    .cart:hover .tooltip {
+        opacity: 1;
+    }
+</style>

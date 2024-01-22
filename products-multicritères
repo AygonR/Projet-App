@@ -1,0 +1,116 @@
+    <label>Sélectionnez les fonctionnalités :</label>
+    <div id="featureSelector">
+        <input type="checkbox" id="clearSound" value="clearSound" onclick="filterProducts()">
+        <label for="clearSound"><span style="font-weight: normal;">Son clair et basses équilibrées</span></label>
+        <input type="checkbox" id="longBattery" value="longBattery" onclick="filterProducts()">
+        <label for="longBattery"><span style="font-weight: normal;">Autonomie exceptionnelle</span></label>
+        <input type="checkbox" id="fastCharge" value="fastCharge" onclick="filterProducts()">
+        <label for="fastCharge"><span style="font-weight: normal;">Charge rapide</span></label>
+        <input type="checkbox" id="noiseReduction" value="noiseReduction" onclick="filterProducts()">
+        <label for="noiseReduction"><span style="font-weight: normal;">Réduction active du bruit</span></label>
+        <input type="checkbox" id="compactDesign" value="compactDesign" onclick="filterProducts()">
+        <label for="compactDesign"><span style="font-weight: normal;">Design compact</span></label>
+        <input type="checkbox" id="ergonomicDesign" value="ergonomicDesign" onclick="filterProducts()">
+        <label for="ergonomicDesign"><span style="font-weight: normal;">Design ergonomique</span></label>
+        <input type="checkbox" id="highDefinitionSound" value="highDefinitionSound" onclick="filterProducts()">
+        <label for="highDefinitionSound"><span style="font-weight: normal;">Son haute définition</span></label>
+        <input type="checkbox" id="premiumDesign" value="premiumDesign" onclick="filterProducts()">
+        <label for="premiumDesign"><span style="font-weight: normal;">Design haut de gamme</span></label>
+        <input type="checkbox" id="optimalConnectivity" value="optimalConnectivity" onclick="filterProducts()">
+        <label for="optimalConnectivity"><span style="font-weight: normal;">Connectivité optimale</span></label>
+    </div>
+
+
+    <div class="product-container" id="product1">
+        <h2>Produit 1: AirSound 1.0</h2>
+        <img src="produit1.png" alt="Produit 1">
+        <p>Les écouteurs AirSound 1.0 offrent une expérience audio sans fil de base avec un son clair et des basses
+            équilibrées. Leur design simple et compact les rend parfaits pour un usage quotidien. Dotés d'une autonomie
+            de 12 heures et d'une charge rapide, ces écouteurs sont un choix fiable pour les utilisateurs à la recherche
+            d'une solution abordable et fonctionnelle.</p>
+        <ul class="product-features">
+            <li data-feature="clearSound">Son clair et basses équilibrées</li>
+            <li data-feature="longBattery">Autonomie de 12 heures</li>
+            <li data-feature="fastCharge">Charge rapide</li>
+            <li data-feature="compactDesign">Design compact</li>
+        </ul>
+        <p>Prix: 120€</p>
+        <button class="add-to-cart" onclick="addToCart('AirSound 1.0', 120)" style="background-color: #DA7DDA;">Ajouter
+            dans le panier</button>
+    </div>
+
+
+    <div class="product-container" id="product2">
+        <h2>Produit 2: AirSound FE</h2>
+        <img src="produit2.png" alt="Produit 2">
+        <p>Les AirSound FE sont des écouteurs sans fil qui élèvent votre expérience auditive. Avec une batterie de 18
+            heures, la fonction de charge rapide, et une protection anti-bruit de base, ces écouteurs offrent un
+            équilibre entre performance et coût. Leur design ergonomique garantit un ajustement confortable pour une
+            utilisation prolongée.</p>
+        <ul class="product-features">
+            <li data-feature="highDefinitionSound">Qualité audio améliorée</li>
+            <li data-feature="longBattery">Autonomie de 18 heures</li>
+            <li data-feature="fastCharge">Charge rapide</li>
+            <li data-feature="noiseReduction">Protection anti-bruit de base</li>
+            <li data-feature="ergonomicDesign">Design ergonomique</li>
+        </ul>
+        <p>Prix: 155€</p>
+        <button class="add-to-cart" onclick="addToCart('Airsound FE', 155)" style="background-color: #DA7DDA;">Ajouter
+            dans le panier</button>
+    </div>
+
+
+    <div class="product-container" id="product3">
+        <h2>Produit 3: OutBuds Pro</h2>
+        <img src="produit3.png" alt="Produit 3">
+        <p>Les OutBuds Pro redéfinissent l'expérience des écouteurs sans fil avec des fonctionnalités avancées. Profitez
+            d'un son haute définition, d'une batterie exceptionnelle de 24 heures, et d'une technologie de réduction
+            active du bruit pour une immersion totale. Ces écouteurs sont conçus pour les audiophiles exigeants et
+            offrent une connectivité optimale avec une portée étendue.</p>
+        <ul class="product-features">
+            <li data-feature="highDefinitionSound">Son haute définition</li>
+            <li data-feature="longBattery">Autonomie exceptionnelle de 24 heures</li>
+            <li data-feature="fastCharge">Charge rapide avancée</li>
+            <li data-feature="noiseReduction">Réduction active du bruit</li>
+            <li data-feature="premiumDesign">Design haut de gamme</li>
+            <li data-feature="optimalConnectivity">Connectivité optimale</li>
+        </ul>
+        <p>Prix: 200€</p>
+        <button class="add-to-cart" onclick="addToCart('OutBuds Pro', 200)" style="background-color: #DA7DDA;">Ajouter
+            dans le panier</button>
+    </div>
+
+    <script>
+        function filterProducts() {
+          var selectedFeatures = Array.from(document.querySelectorAll("#featureSelector input:checked")).map(checkbox => checkbox.value);
+            var productContainers = document.getElementsByClassName("product-container");
+            for (var i = 0; i < productContainers.length; i++) {
+                var product = productContainers[i];
+                var featuresList = product.getElementsByTagName("li");
+                var hasSelectedFeature = false;
+                for (var j = 0; j < featuresList.length; j++) {
+                    var feature = featuresList[j].getAttribute("data-feature");
+                    if (selectedFeatures.includes(feature)) {
+                        hasSelectedFeature = true;
+                        break;
+                    }
+                }
+
+                if (selectedFeatures.length === 0) {
+                    hasSelectedFeature = true;
+                }
+                if (hasSelectedFeature) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            }
+        }
+
+
+        function addToCart(productName, price) {
+            alert("Ajouté au panier : " + productName + " - Prix : " + price + "€");
+        }
+    </script>
+</body>
+

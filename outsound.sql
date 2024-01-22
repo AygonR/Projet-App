@@ -19,7 +19,6 @@ AdresseMail VARCHAR(50));
 
 CREATE TABLE formulaire (
 IdQuestion int AUTO_INCREMENT PRIMARY KEY,
-question varchar(300),
-Pseudo_user VARCHAR(50),
-mail_user VARCHAR(100)
+question varchar(500),
+mail_user varchar(500)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

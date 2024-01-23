@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphiques</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/styleCharts.css">
+</head>
+
+<header>
+    <nav class="navbar">
+        <a class="logo">
+            <img src="logo_sonomorphia.png" alt="logo" class="logo-image" width="300" height="90">
+        </a>
+        <div>
+            <input type="text" id="input" onkeyup="searchTable();" placeholder="Rechercher...">
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li class="active"><a href="#about">À PROPOS DE NOUS</a></li>
+                <li><a href="OutSound_presentation_fr.php">OUTSOUND</a></li>
+                <li><a href="page_faq.php">FAQ</a></li>
+                <li><a href="#contact" class="button1">NOUS CONTACTER</a></li>
+                <li><a href="login.php">CONNEXION</a></li>
+                <li><a href="register.php">INSCRIPTION</a></li>
+                <li><a href="Home1.php">EN</a></li>
+            </ul>
+        </div>
+        <img src="menu-btn.png" , alt="liste deroulante menu" class="menu-hamburger">
+    </nav>
+</header>
+
+<body>
+
+            <!-- ================ Add Charts JS ================= -->
+            <div class="chartsBx">
+                <div class="chart"> <canvas id="chart-1"></canvas> </div>
+                <div class="chart"> <canvas id="chart-2"></canvas> </div>
+            </div>
+
+    <!-- ======= Charts JS ====== -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="chartsJS.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

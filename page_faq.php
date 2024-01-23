@@ -3,16 +3,6 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "Outsound";
-
-// Créer une connexion
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Vérifier la connexion
-//if ($conn->connect_error) {
-//    die("Connection failed: " . $conn->connect_error);
-//} else {
-//    echo "Connection successful!";
-//}  
 ?>
 <!DOCTYPE html>
 <html lang="fr">
